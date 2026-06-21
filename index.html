@@ -16,7 +16,7 @@
   <nav class="navbar" id="navbar">
     <div class="navbar__inner">
       <div class="navbar__brand">
-        <a href="#" class="navbar__logo">SAKARO</a>
+        <a href="index.html" class="navbar__logo">SAKARO</a>
         <span class="navbar__tagline">feel good, snack better.</span>
       </div>
       <ul class="navbar__links" id="navLinks">
@@ -26,6 +26,10 @@
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Dónde Comprar</a></li>
       </ul>
+      <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="navbar__cart-count" id="cartCount">0</span>
+      </a>
       <a href="#productos" class="navbar__cta">Comprar</a>
       <button class="navbar__hamburger" id="hamburger" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -36,7 +40,7 @@
   <!-- ════════ HERO ════════ -->
   <section class="hero" id="inicio">
     <div class="hero__bg">
-      <img src="images/spreads-manos.jpg" alt="Manos sosteniendo spreads SAKARO" loading="eager">
+      <img src="images/spreads-lifestyle-1.jpg" alt="Frascos SAKARO en fondo rosa" loading="eager">
     </div>
     <div class="hero__content">
       <h1 class="hero__headline">SAKARO</h1>
@@ -177,7 +181,7 @@
           <p class="product-card__desc">Láminas de dátil con crema de almendra, chocolate oscuro 70% y sal de mar.</p>
           <div class="product-card__footer">
             <span class="product-card__price">$175 <small>MXN</small></span>
-            <a href="#" class="product-card__link">Ver más &rarr;</a>
+            <a href="datil-ab-barks.html" class="product-card__link">Ver más &rarr;</a>
           </div>
         </div>
       </article>
@@ -191,7 +195,7 @@
           <p class="product-card__desc">Dátiles medjool rellenos de crema de almendra, cubiertos con chocolate 70%.</p>
           <div class="product-card__footer">
             <span class="product-card__price">$175 <small>MXN</small></span>
-            <a href="#" class="product-card__link">Ver más &rarr;</a>
+            <a href="datil-ab-dates.html" class="product-card__link">Ver más &rarr;</a>
           </div>
         </div>
       </article>
@@ -205,7 +209,7 @@
           <p class="product-card__desc">Láminas de dátil con crema de cacahuate, chocolate oscuro 70% y sal de mar.</p>
           <div class="product-card__footer">
             <span class="product-card__price">$175 <small>MXN</small></span>
-            <a href="#" class="product-card__link">Ver más &rarr;</a>
+            <a href="datil-pb-barks.html" class="product-card__link">Ver más &rarr;</a>
           </div>
         </div>
       </article>
@@ -219,32 +223,13 @@
           <p class="product-card__desc">Dátiles medjool rellenos de crema de cacahuate, cubiertos con chocolate 70%.</p>
           <div class="product-card__footer">
             <span class="product-card__price">$175 <small>MXN</small></span>
-            <a href="#" class="product-card__link">Ver más &rarr;</a>
+            <a href="datil-pb-dates.html" class="product-card__link">Ver más &rarr;</a>
           </div>
         </div>
       </article>
 
     </div>
     <p class="products__slogan reveal">A better date than your last one!</p>
-  </section>
-
-  <!-- ════════ IMAGE BREAK — INGREDIENTES ════════ -->
-  <section class="ingredients">
-    <div class="ingredients__inner">
-      <div class="ingredients__text reveal">
-        <span class="ingredients__label">Ingredientes reales</span>
-        <h2 class="ingredients__headline">Solo lo bueno.<br>Nada más.</h2>
-        <p>Spreads a base de nueces, dátiles medjool, chocolate 70% de cacao y un toque de sal de mar. Cada spread y cada dátil está hecho en México a mano con amor. &#10084;&#65039;</p>
-        <div class="ingredients__chips">
-          <span class="chip chip--teal">100% Natural</span>
-          <span class="chip chip--salmon">0g Azúcar añadida</span>
-          <span class="chip chip--pink">Sin aceite de palma</span>
-        </div>
-      </div>
-      <div class="ingredients__image reveal">
-        <img src="images/spread-almendras-bowl.jpg" alt="Bowl de crema de almendra con almendras" loading="lazy">
-      </div>
-    </div>
   </section>
 
   <!-- ════════ SPREADS INTRO ════════ -->
@@ -256,7 +241,7 @@
         <p class="spreads-intro__desc">Los mismos spreads que rellenan los dátiles — ahora en frasco para untar en lo que quieras. Sin azúcar añadida, sin aceite de palma, sin conservadores.</p>
       </div>
       <div class="spreads-intro__image reveal">
-        <img src="images/spreads-lifestyle-1.jpg" alt="Frascos de spreads SAKARO" loading="lazy">
+        <img src="images/spread-almendras-bowl.jpg" alt="Bowl de almendras SAKARO" loading="lazy">
       </div>
     </div>
   </section>
@@ -266,101 +251,115 @@
     <div class="spreads__grid">
 
       <article class="spread-card reveal">
-        <div class="spread-card__image">
-          <img src="images/spread-almendra.jpg" alt="Almond Butter" loading="lazy">
-        </div>
-        <div class="spread-card__body">
-          <h3>Almond Butter</h3>
-          <p>La original. Almendras puras, un toque de sal, zero drama. Úntala en todo.</p>
-          <div class="spread-card__footer">
-            <span class="spread-card__price">$200 <small>MXN</small></span>
-            <span class="spread-card__weight">230g</span>
+        <a href="spread-almendra.html" class="spread-card__link-wrap">
+          <div class="spread-card__image">
+            <img src="images/spread-almendra.jpg" alt="Almond Butter" loading="lazy">
           </div>
-        </div>
+          <div class="spread-card__body">
+            <h3>Almond Butter</h3>
+            <p>La original. Almendras puras, un toque de sal, zero drama. Úntala en todo.</p>
+            <div class="spread-card__footer">
+              <span class="spread-card__price">$200 <small>MXN</small></span>
+              <span class="spread-card__weight">230g</span>
+            </div>
+          </div>
+        </a>
       </article>
 
       <article class="spread-card reveal">
-        <div class="spread-card__image">
-          <img src="images/spread-almendra-canela.jpg" alt="Almond &amp; Cinnamon Butter" loading="lazy">
-        </div>
-        <div class="spread-card__body">
-          <h3>Almond &amp; Cinnamon Butter</h3>
-          <p>Tu crema de almendra favorita, ahora con un abrazo de canela. Perfecta para el desayuno de tus sueños.</p>
-          <div class="spread-card__footer">
-            <span class="spread-card__price">$250 <small>MXN</small></span>
-            <span class="spread-card__weight">230g</span>
+        <a href="spread-almendra-canela.html" class="spread-card__link-wrap">
+          <div class="spread-card__image">
+            <img src="images/spread-almendra-canela.jpg" alt="Almond &amp; Cinnamon Butter" loading="lazy">
           </div>
-        </div>
+          <div class="spread-card__body">
+            <h3>Almond &amp; Cinnamon Butter</h3>
+            <p>Tu crema de almendra favorita, ahora con un abrazo de canela. Perfecta para el desayuno de tus sueños.</p>
+            <div class="spread-card__footer">
+              <span class="spread-card__price">$250 <small>MXN</small></span>
+              <span class="spread-card__weight">230g</span>
+            </div>
+          </div>
+        </a>
       </article>
 
       <article class="spread-card reveal">
-        <div class="spread-card__image">
-          <img src="images/spread-almendra-cafe.jpg" alt="Almond &amp; Coffee Butter" loading="lazy">
-        </div>
-        <div class="spread-card__body">
-          <h3>Almond &amp; Coffee Butter</h3>
-          <p>Para los que necesitan café hasta en el spread. Almendra + espresso = el match perfecto.</p>
-          <div class="spread-card__footer">
-            <span class="spread-card__price">$250 <small>MXN</small></span>
-            <span class="spread-card__weight">230g</span>
+        <a href="spread-almendra-cafe.html" class="spread-card__link-wrap">
+          <div class="spread-card__image">
+            <img src="images/spread-almendra-cafe.jpg" alt="Almond &amp; Coffee Butter" loading="lazy">
           </div>
-        </div>
+          <div class="spread-card__body">
+            <h3>Almond &amp; Coffee Butter</h3>
+            <p>Para los que necesitan café hasta en el spread. Almendra + espresso = el match perfecto.</p>
+            <div class="spread-card__footer">
+              <span class="spread-card__price">$250 <small>MXN</small></span>
+              <span class="spread-card__weight">230g</span>
+            </div>
+          </div>
+        </a>
       </article>
 
       <article class="spread-card reveal">
-        <div class="spread-card__image">
-          <img src="images/spread-cacahuate.jpg" alt="Peanut Butter" loading="lazy">
-        </div>
-        <div class="spread-card__body">
-          <h3>Peanut Butter</h3>
-          <p>La favorita de todos. Cremosa, natural, adictiva. La crema de cacahuate que siempre quisiste.</p>
-          <div class="spread-card__footer">
-            <span class="spread-card__price">$200 <small>MXN</small></span>
-            <span class="spread-card__weight">230g</span>
+        <a href="spread-cacahuate.html" class="spread-card__link-wrap">
+          <div class="spread-card__image">
+            <img src="images/spread-cacahuate.jpg" alt="Peanut Butter" loading="lazy">
           </div>
-        </div>
+          <div class="spread-card__body">
+            <h3>Peanut Butter</h3>
+            <p>La favorita de todos. Cremosa, natural, adictiva. La crema de cacahuate que siempre quisiste.</p>
+            <div class="spread-card__footer">
+              <span class="spread-card__price">$200 <small>MXN</small></span>
+              <span class="spread-card__weight">230g</span>
+            </div>
+          </div>
+        </a>
       </article>
 
       <article class="spread-card reveal">
-        <div class="spread-card__image">
-          <img src="images/spread-nuez-india.jpg" alt="Cashew Butter" loading="lazy">
-        </div>
-        <div class="spread-card__body">
-          <h3>Cashew Butter</h3>
-          <p>Suave, mantequillosa, increíblemente versátil. La que cambia la vida de los que la prueban.</p>
-          <div class="spread-card__footer">
-            <span class="spread-card__price">$250 <small>MXN</small></span>
-            <span class="spread-card__weight">230g</span>
+        <a href="spread-nuez-india.html" class="spread-card__link-wrap">
+          <div class="spread-card__image">
+            <img src="images/spread-nuez-india.jpg" alt="Cashew Butter" loading="lazy">
           </div>
-        </div>
+          <div class="spread-card__body">
+            <h3>Cashew Butter</h3>
+            <p>Suave, mantequillosa, increíblemente versátil. La que cambia la vida de los que la prueban.</p>
+            <div class="spread-card__footer">
+              <span class="spread-card__price">$250 <small>MXN</small></span>
+              <span class="spread-card__weight">230g</span>
+            </div>
+          </div>
+        </a>
       </article>
 
       <article class="spread-card reveal">
-        <div class="spread-card__image">
-          <img src="images/spread-nuez-india-matcha.jpg" alt="Cashew &amp; Matcha Butter" loading="lazy">
-        </div>
-        <div class="spread-card__body">
-          <h3>Cashew &amp; Matcha Butter</h3>
-          <p>Nuez de la india + matcha ceremonial. Antioxidantes al máximo, sabor de otro nivel. Para las que saben lo que quieren.</p>
-          <div class="spread-card__footer">
-            <span class="spread-card__price">$250 <small>MXN</small></span>
-            <span class="spread-card__weight">230g</span>
+        <a href="spread-nuez-india-matcha.html" class="spread-card__link-wrap">
+          <div class="spread-card__image">
+            <img src="images/spread-nuez-india-matcha.jpg" alt="Cashew &amp; Matcha Butter" loading="lazy">
           </div>
-        </div>
+          <div class="spread-card__body">
+            <h3>Cashew &amp; Matcha Butter</h3>
+            <p>Nuez de la india + matcha ceremonial. Antioxidantes al máximo, sabor de otro nivel. Para las que saben lo que quieren.</p>
+            <div class="spread-card__footer">
+              <span class="spread-card__price">$250 <small>MXN</small></span>
+              <span class="spread-card__weight">230g</span>
+            </div>
+          </div>
+        </a>
       </article>
 
       <article class="spread-card reveal">
-        <div class="spread-card__image">
-          <img src="images/spread-avellana.jpg" alt="Hazelnut &amp; Cocoa Butter" loading="lazy">
-        </div>
-        <div class="spread-card__body">
-          <h3>Hazelnut &amp; Cocoa Butter</h3>
-          <p>Como la nutella, pero sin culpa. De verdad. Pruébala y no vuelves a la otra.</p>
-          <div class="spread-card__footer">
-            <span class="spread-card__price">$250 <small>MXN</small></span>
-            <span class="spread-card__weight">230g</span>
+        <a href="spread-avellana.html" class="spread-card__link-wrap">
+          <div class="spread-card__image">
+            <img src="images/spread-avellana.jpg" alt="Hazelnut &amp; Cocoa Butter" loading="lazy">
           </div>
-        </div>
+          <div class="spread-card__body">
+            <h3>Hazelnut &amp; Cocoa Butter</h3>
+            <p>Como la nutella, pero sin culpa. De verdad. Pruébala y no vuelves a la otra.</p>
+            <div class="spread-card__footer">
+              <span class="spread-card__price">$250 <small>MXN</small></span>
+              <span class="spread-card__weight">230g</span>
+            </div>
+          </div>
+        </a>
       </article>
 
     </div>
@@ -538,5 +537,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hazelnut & Cocoa Butter — SAKARO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar is-scrolled" id="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__brand">
+        <a href="index.html" class="navbar__logo">SAKARO</a>
+        <span class="navbar__tagline">feel good, snack better.</span>
+      </div>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#productos">Dátiles</a></li>
+        <li><a href="index.html#spreads">Spreads</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Dónde Comprar</a></li>
+      </ul>
+      <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="navbar__cart-count" id="cartCount">0</span>
+      </a>
+      <a href="index.html#productos" class="navbar__cta">Comprar</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="pdp">
+    <div class="pdp__inner">
+      <div class="pdp__image">
+        <img src="images/spread-avellana.jpg" alt="Hazelnut & Cocoa Butter">
+      </div>
+      <div class="pdp__info">
+        <a href="index.html" class="pdp__back">&larr; Regresar</a>
+        <h1 class="pdp__name">Hazelnut & Cocoa Butter</h1>
+        <div class="pdp__meta">
+          <span class="pdp__price">$250 <small>MXN</small></span>
+          <span class="pdp__weight">230g</span>
+        </div>
+        
+        <p class="pdp__desc">Como la nutella, pero sin culpa. De verdad.</p>
+        <div class="pdp__badges">
+          <span>Sin lácteos</span>
+          <span>Sin conservadores</span>
+          <span>Sin aceite de palma</span>
+          <span>Sin endulzantes</span>
+        </div>
+        <div class="pdp__qty">
+          <button class="pdp__qty-btn" onclick="changeQty(-1)">-</button>
+          <span class="pdp__qty-num" id="qty">1</span>
+          <button class="pdp__qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <button class="btn btn--pink pdp__add" onclick="addToCart()">Agregar al carrito</button>
+        <p class="pdp__confirm" id="confirmMsg"></p>
+      </div>
+    </div>
+    <div class="pdp__ingredients">
+      <h3>Ingredientes</h3>
+      <p>Avellanas, cacao, sal de mar.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="images/sakaro-logo.png" alt="SAKARO" class="footer__logo-img">
+        <p class="footer__tagline">Feel good, snack better.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Productos</h4>
+        <a href="index.html#productos">Dátiles</a>
+        <a href="index.html#spreads">Spreads</a>
+      </div>
+      <div class="footer__links">
+        <h4>SAKARO</h4>
+        <a href="index.html#nosotros">Quiénes somos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2024 SAKARO. Hecho en México con mucho amor.</p>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    const PRODUCT = { id: 'spread-avellana', name: 'Hazelnut & Cocoa Butter', price: 250, img: 'images/spread-avellana.jpg' };
+    function changeQty(d) {
+      const el = document.getElementById('qty');
+      el.textContent = Math.max(1, parseInt(el.textContent) + d);
+    }
+    function addToCart() {
+      const qty = parseInt(document.getElementById('qty').textContent);
+      SakaroCart.addItem({ ...PRODUCT, qty });
+      document.getElementById('confirmMsg').textContent = '¡Agregado! \u{1F6D2}';
+      setTimeout(() => document.getElementById('confirmMsg').textContent = '', 2500);
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

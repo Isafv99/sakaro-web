@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu carrito — SAKARO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar is-scrolled" id="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__brand">
+        <a href="index.html" class="navbar__logo">SAKARO</a>
+        <span class="navbar__tagline">feel good, snack better.</span>
+      </div>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#productos">Dátiles</a></li>
+        <li><a href="index.html#spreads">Spreads</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Dónde Comprar</a></li>
+      </ul>
+      <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="navbar__cart-count" id="cartCount">0</span>
+      </a>
+      <a href="index.html#productos" class="navbar__cta">Comprar</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="cart-page">
+    <div class="cart-page__inner">
+      <a href="index.html" class="pdp__back">&larr; Seguir comprando</a>
+      <h1 class="cart-page__title">Tu carrito</h1>
+
+      <div class="cart-page__content" id="cartContent">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="images/sakaro-logo.png" alt="SAKARO" class="footer__logo-img">
+        <p class="footer__tagline">Feel good, snack better.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Productos</h4>
+        <a href="index.html#productos">Dátiles</a>
+        <a href="index.html#spreads">Spreads</a>
+      </div>
+      <div class="footer__links">
+        <h4>SAKARO</h4>
+        <a href="index.html#nosotros">Quiénes somos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2024 SAKARO. Hecho en México con mucho amor.</p>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    function renderCart() {
+      const container = document.getElementById('cartContent');
+      const items = SakaroCart.getItems();
+
+      if (items.length === 0) {
+        container.innerHTML = `
+          <div class="cart-empty">
+            <p class="cart-empty__text">Tu carrito está vacío &#128722;</p>
+            <a href="index.html#productos" class="btn btn--pink">Ver productos</a>
+          </div>`;
+        return;
+      }
+
+      const subtotal = SakaroCart.getTotal();
+      const shipping = subtotal >= 500 ? 0 : 80;
+      const total = subtotal + shipping;
+
+      let itemsHtml = items.map(item => `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.name}" class="cart-item__img">
+          <div class="cart-item__info">
+            <h3 class="cart-item__name">${item.name}</h3>
+            <span class="cart-item__price">$${item.price} MXN</span>
+          </div>
+          <div class="cart-item__qty">
+            <button onclick="updateQty('${item.id}', ${item.qty - 1})">-</button>
+            <span>${item.qty}</span>
+            <button onclick="updateQty('${item.id}', ${item.qty + 1})">+</button>
+          </div>
+          <span class="cart-item__subtotal">$${item.price * item.qty}</span>
+          <button class="cart-item__remove" onclick="removeItem('${item.id}')">&times;</button>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div class="cart-items">${itemsHtml}</div>
+        <div class="cart-summary">
+          <div class="cart-summary__row">
+            <span>Subtotal</span>
+            <span>$${subtotal} MXN</span>
+          </div>
+          <div class="cart-summary__row">
+            <span>Envío</span>
+            <span>${shipping === 0 ? 'Gratis' : '$' + shipping + ' MXN'}</span>
+          </div>
+          ${shipping === 0 ? '<p class="cart-summary__free">Envío gratis en pedidos +$500 MXN</p>' : '<p class="cart-summary__free">Envío gratis en pedidos +$500 MXN</p>'}
+          <div class="cart-summary__row cart-summary__total">
+            <span>Total</span>
+            <span>$${total} MXN</span>
+          </div>
+          <a href="#" class="btn btn--pink cart-summary__btn">Proceder al pago</a>
+        </div>
+      `;
+    }
+
+    function updateQty(id, qty) {
+      if (qty < 1) { SakaroCart.removeItem(id); }
+      else { SakaroCart.updateQty(id, qty); }
+      renderCart();
+    }
+
+    function removeItem(id) {
+      SakaroCart.removeItem(id);
+      renderCart();
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
