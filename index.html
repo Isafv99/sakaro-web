@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAKARO — Feel good, snack better.</title>
+  <meta name="description" content="Snacks de dátil premium hechos con ingredientes reales. Sin conservadores, sin azúcar añadida, sin aceite de palma. Solo sabor de verdad.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ════════ NAVBAR ════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__brand">
+        <a href="#" class="navbar__logo">SAKARO</a>
+        <span class="navbar__tagline">feel good, snack better.</span>
+      </div>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#spreads">Spreads</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a href="#productos" class="navbar__cta">Comprar</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════ HERO ════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg">
+      <img src="images/datiles-hero.jpg" alt="Dátiles SAKARO rellenos de crema" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__headline">A better date<br>than your last one.</h1>
+      <p class="hero__sub">Snacks de dátil que nutren tu cuerpo y conquistan tu paladar.<br>Sin culpa. Sin compromiso. Solo sabor real.</p>
+      <div class="hero__buttons">
+        <a href="#productos" class="btn btn--pink">Ver productos</a>
+        <a href="#spreads" class="btn btn--outline">Conocer los spreads</a>
+      </div>
+      <div class="hero__chips">
+        <span>Sin lácteos</span>
+        <span>Sin conservadores</span>
+        <span>Sin aceite de palma</span>
+        <span>Sin endulzantes</span>
+      </div>
+    </div>
+    <div class="hero__marquee">
+      <div class="marquee__track">
+        <span class="marquee__text marquee__text--pink">feel good, snack better.</span>
+        <span class="marquee__dot">&middot;</span>
+        <span class="marquee__text marquee__text--teal">a better date than your last one.</span>
+        <span class="marquee__dot">&middot;</span>
+        <span class="marquee__text marquee__text--pink">addictive? maybe. worth it? absolutely.</span>
+        <span class="marquee__dot">&middot;</span>
+        <span class="marquee__text marquee__text--teal">feel good, snack better.</span>
+        <span class="marquee__dot">&middot;</span>
+        <span class="marquee__text marquee__text--pink">a better date than your last one.</span>
+        <span class="marquee__dot">&middot;</span>
+        <span class="marquee__text marquee__text--teal">addictive? maybe. worth it? absolutely.</span>
+        <span class="marquee__dot">&middot;</span>
+        <span class="marquee__text marquee__text--pink">feel good, snack better.</span>
+        <span class="marquee__dot">&middot;</span>
+        <span class="marquee__text marquee__text--teal">a better date than your last one.</span>
+        <span class="marquee__dot">&middot;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ INTRO ════════ -->
+  <section class="intro" id="intro">
+    <div class="intro__inner">
+      <div class="intro__text reveal">
+        <h2 class="intro__headline">No tienes que elegir entre<br>rico y saludable.</h2>
+        <p class="intro__body">En SAKARO creemos que cuidarte debería saber increíble. Por eso hacemos snacks con ingredientes reales — dátiles medjool, cremas artesanales y chocolate 70% de cacao — sin conservadores, sin azúcar añadida, sin aceite de palma. Solo sabor de verdad.</p>
+        <p class="intro__quote">"Feel good, snack better."</p>
+      </div>
+      <div class="intro__image reveal">
+        <img src="images/datiles-lifestyle.png" alt="Bolsas de dátiles SAKARO" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ MARQUEE SEPARATOR ════════ -->
+  <section class="marquee-sep">
+    <div class="marquee-sep__track">
+      <span class="msep--pink">feel good</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">snack better</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">addictive? maybe</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">worth it? absolutely</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">a better date</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">than your last one</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">feel good</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">snack better</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">addictive? maybe</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">worth it? absolutely</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">a better date</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">than your last one</span>
+      <span class="msep__dot">&middot;</span>
+    </div>
+  </section>
+
+  <!-- ════════ CONEXIÓN SPREADS ↔ DÁTILES ════════ -->
+  <section class="connection">
+    <div class="connection__inner">
+      <div class="connection__col reveal">
+        <div class="connection__img-wrap">
+          <img src="images/spread-almendra.jpg" alt="Crema de almendra SAKARO" loading="lazy">
+        </div>
+        <h3>Nuestras cremas</h3>
+        <p>Cremas artesanales hechas con un solo ingrediente (más un toque de sal). Sin azúcar. Sin aceite de palma. Puras, naturales, adictivas.</p>
+      </div>
+      <div class="connection__bridge reveal">
+        <div class="connection__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <p>Los mismos spreads que amas... ahora dentro de un dátil.</p>
+        <div class="connection__arrow connection__arrow--flip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <div class="connection__col reveal">
+        <div class="connection__img-wrap">
+          <img src="images/datiles-hero.jpg" alt="Dátiles rellenos SAKARO" loading="lazy">
+        </div>
+        <h3>Nuestros dátiles</h3>
+        <p>Dátiles medjool rellenos de nuestras cremas artesanales, bañados en chocolate oscuro 70%. El snack perfecto que no sabías que necesitabas.</p>
+      </div>
+    </div>
+    <p class="connection__slogan reveal">"Addictive? Maybe. Worth it? Absolutely."</p>
+  </section>
+
+  <!-- ════════ PRODUCTOS — DÁTILES ════════ -->
+  <section class="products" id="productos">
+    <div class="products__header reveal">
+      <span class="products__label">Nuestros productos</span>
+      <h2 class="products__title">Dátiles SAKARO</h2>
+      <p class="products__subtitle">Rellenos de nuestras cremas artesanales y bañados en chocolate 70%. Best enjoyed cold!</p>
+    </div>
+    <div class="products__grid">
+
+      <article class="product-card product-card--teal reveal">
+        <div class="product-card__image">
+          <img src="images/bolsa-ab-barks.png" alt="Almond Butter Date Barks" loading="lazy">
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__badge-row">
+            <span class="product-card__cold">Best enjoyed cold!</span>
+          </span>
+          <h3 class="product-card__name">Almond Butter Date Barks</h3>
+          <p class="product-card__desc">Láminas de dátil con crema de almendra, chocolate oscuro 70% y sal de mar. Crujiente. Cremoso. Completamente adictivo.</p>
+          <div class="product-card__badges">
+            <span>Sin lácteos</span><span>Sin conservadores</span><span>Sin aceite de palma</span><span>Sin endulzantes</span>
+          </div>
+          <div class="product-card__footer">
+            <span class="product-card__price">$160 – $180 <small>MXN</small></span>
+            <span class="product-card__weight">150g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card product-card--salmon reveal">
+        <div class="product-card__image">
+          <img src="images/bolsa-ab-dates.png" alt="Almond Butter Stuffed Dates" loading="lazy">
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__badge-row">
+            <span class="product-card__cold">Best enjoyed cold!</span>
+          </span>
+          <h3 class="product-card__name">Almond Butter Stuffed Dates</h3>
+          <p class="product-card__desc">Dátiles medjool rellenos de crema de almendra, bañados en chocolate 70%. El snack que no para de pedir.</p>
+          <div class="product-card__badges">
+            <span>Sin lácteos</span><span>Sin conservadores</span><span>Sin aceite de palma</span><span>Sin endulzantes</span>
+          </div>
+          <div class="product-card__footer">
+            <span class="product-card__price">$140 – $160 <small>MXN</small></span>
+            <span class="product-card__weight">150g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card product-card--navy reveal">
+        <div class="product-card__image">
+          <img src="images/bolsa-pb-barks.png" alt="Peanut Butter Date Barks" loading="lazy">
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__badge-row">
+            <span class="product-card__cold">Best enjoyed cold!</span>
+          </span>
+          <h3 class="product-card__name">Peanut Butter Date Barks</h3>
+          <p class="product-card__desc">Láminas de dátil con crema de cacahuate, chocolate oscuro 70% y sal de mar. Para los que lo quieren todo: dulce, salado y chocolatoso.</p>
+          <div class="product-card__badges">
+            <span>Sin lácteos</span><span>Sin conservadores</span><span>Sin aceite de palma</span><span>Sin endulzantes</span>
+          </div>
+          <div class="product-card__footer">
+            <span class="product-card__price">$160 – $180 <small>MXN</small></span>
+            <span class="product-card__weight">150g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card product-card--pink reveal">
+        <div class="product-card__image">
+          <img src="images/bolsa-pb-dates.png" alt="Peanut Butter Stuffed Dates" loading="lazy">
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__badge-row">
+            <span class="product-card__cold">Best enjoyed cold!</span>
+          </span>
+          <h3 class="product-card__name">Peanut Butter Stuffed Dates</h3>
+          <p class="product-card__desc">Dátiles medjool rellenos de crema de cacahuate, cubiertos de chocolate 70%. Proteína, fibra y sabor real. Sin excusas.</p>
+          <div class="product-card__badges">
+            <span>Sin lácteos</span><span>Sin conservadores</span><span>Sin aceite de palma</span><span>Sin endulzantes</span>
+          </div>
+          <div class="product-card__footer">
+            <span class="product-card__price">$140 – $160 <small>MXN</small></span>
+            <span class="product-card__weight">150g</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <p class="products__slogan reveal">"A better date than your last one!"</p>
+  </section>
+
+  <!-- ════════ IMAGE BREAK ════════ -->
+  <section class="image-break">
+    <img src="images/datiles-mano.png" alt="Colección de bolsas SAKARO" loading="lazy">
+    <div class="image-break__overlay">
+      <p class="image-break__text">"Feel good, snack better."</p>
+    </div>
+  </section>
+
+  <!-- ════════ PRODUCTOS — SPREADS ════════ -->
+  <section class="spreads" id="spreads">
+    <div class="spreads__header reveal">
+      <span class="spreads__label">Cremas artesanales</span>
+      <h2 class="spreads__title">Spreads SAKARO</h2>
+      <p class="spreads__subtitle">Las mismas cremas que rellenan los dátiles — ahora en frasco para untar en lo que quieras. Sin azúcar añadida, sin aceite de palma, sin conservadores.</p>
+    </div>
+    <div class="spreads__grid">
+
+      <article class="spread-card spread-card--teal reveal">
+        <div class="spread-card__image">
+          <img src="images/spread-almendra.jpg" alt="Crema de Almendra" loading="lazy">
+        </div>
+        <div class="spread-card__body">
+          <h3>Crema de Almendra</h3>
+          <p>La original. Almendras puras, un toque de sal, zero drama. Úntala en todo.</p>
+          <div class="spread-card__footer">
+            <span class="spread-card__price">$120 – $150 <small>MXN</small></span>
+            <span class="spread-card__weight">200g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spread-card spread-card--salmon reveal">
+        <div class="spread-card__image">
+          <img src="images/spread-almendra-canela.jpg" alt="Crema de Almendra con Canela" loading="lazy">
+        </div>
+        <div class="spread-card__body">
+          <h3>Almendra con Canela</h3>
+          <p>Tu crema de almendra favorita, ahora con un abrazo de canela. Perfecta para el desayuno de tus sueños.</p>
+          <div class="spread-card__footer">
+            <span class="spread-card__price">$130 – $160 <small>MXN</small></span>
+            <span class="spread-card__weight">200g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spread-card spread-card--navy reveal">
+        <div class="spread-card__image">
+          <img src="images/spread-almendra-cafe.jpg" alt="Crema de Almendra con Café" loading="lazy">
+        </div>
+        <div class="spread-card__body">
+          <h3>Almendra con Café</h3>
+          <p>Para los que necesitan café hasta en el spread. Almendra + espresso = el match perfecto.</p>
+          <div class="spread-card__footer">
+            <span class="spread-card__price">$130 – $160 <small>MXN</small></span>
+            <span class="spread-card__weight">200g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spread-card spread-card--pink reveal">
+        <div class="spread-card__image">
+          <img src="images/spread-cacahuate.jpg" alt="Crema de Cacahuate" loading="lazy">
+        </div>
+        <div class="spread-card__body">
+          <h3>Crema de Cacahuate</h3>
+          <p>La favorita de todos. Cremosa, natural, adictiva. La crema de cacahuate que siempre quisiste.</p>
+          <div class="spread-card__footer">
+            <span class="spread-card__price">$100 – $130 <small>MXN</small></span>
+            <span class="spread-card__weight">200g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spread-card spread-card--teal reveal">
+        <div class="spread-card__image">
+          <img src="images/spread-nuez-india.jpg" alt="Crema de Nuez de la India" loading="lazy">
+        </div>
+        <div class="spread-card__body">
+          <h3>Nuez de la India</h3>
+          <p>Suave, mantequillosa, increíblemente versátil. La que cambia la vida de los que la prueban.</p>
+          <div class="spread-card__footer">
+            <span class="spread-card__price">$140 – $170 <small>MXN</small></span>
+            <span class="spread-card__weight">200g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spread-card spread-card--salmon reveal">
+        <div class="spread-card__image">
+          <img src="images/spread-nuez-india-matcha.jpg" alt="Crema de Nuez de la India con Matcha" loading="lazy">
+        </div>
+        <div class="spread-card__body">
+          <h3>Nuez de la India con Matcha</h3>
+          <p>Nuez de la india + matcha ceremonial. Antioxidantes al máximo, sabor de otro nivel. Para las que saben lo que quieren.</p>
+          <div class="spread-card__footer">
+            <span class="spread-card__price">$160 – $190 <small>MXN</small></span>
+            <span class="spread-card__weight">200g</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spread-card spread-card--pink reveal">
+        <div class="spread-card__image">
+          <img src="images/spread-avellana.jpg" alt="Crema de Avellana" loading="lazy">
+        </div>
+        <div class="spread-card__body">
+          <h3>Crema de Avellana</h3>
+          <p>Como la nutella, pero sin culpa. De verdad. Pruébala y no vuelves a la otra.</p>
+          <div class="spread-card__footer">
+            <span class="spread-card__price">$150 – $180 <small>MXN</small></span>
+            <span class="spread-card__weight">200g</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <p class="spreads__slogan reveal">"Addictive? Maybe. Worth it? Absolutely."</p>
+  </section>
+
+  <!-- ════════ MARQUEE SEPARATOR 2 ════════ -->
+  <section class="marquee-sep marquee-sep--reverse">
+    <div class="marquee-sep__track marquee-sep__track--reverse">
+      <span class="msep--teal">feel good</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">snack better</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">a better date than your last one</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">addictive? maybe</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">worth it? absolutely</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">feel good</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">snack better</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">a better date than your last one</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--teal">addictive? maybe</span>
+      <span class="msep__dot">&middot;</span>
+      <span class="msep--pink">worth it? absolutely</span>
+      <span class="msep__dot">&middot;</span>
+    </div>
+  </section>
+
+  <!-- ════════ QUIÉNES SOMOS ════════ -->
+  <section class="about" id="nosotros">
+    <div class="about__inner">
+      <div class="about__image reveal">
+        <img src="images/datiles-detalle.png" alt="Detalle de productos SAKARO" loading="lazy">
+      </div>
+      <div class="about__text reveal">
+        <span class="about__label">Nuestra historia</span>
+        <h2 class="about__headline">Hecho en México,<br>con mucho amor.</h2>
+        <p>SAKARO nació de la idea de que comer saludable no tiene que ser aburrido. Nuestra misión es nutrir cuerpos sin sacrificar el sabor — haciendo de la comida saludable algo divertido, una elección de estilo de vida, no una obligación.</p>
+        <p>Cada producto está hecho a mano con ingredientes reales: dátiles medjool, frutos secos premium, chocolate 70% de cacao y un toque de sal de mar. Sin conservadores, sin azúcar añadida, sin aceite de palma. Solo lo bueno.</p>
+        <div class="about__values">
+          <div class="about__value about__value--teal">
+            <span class="about__value-num">100%</span>
+            <span>Natural</span>
+          </div>
+          <div class="about__value about__value--salmon">
+            <span class="about__value-num">0g</span>
+            <span>Azúcar añadida</span>
+          </div>
+          <div class="about__value about__value--navy">
+            <span class="about__value-num">70%</span>
+            <span>Cacao</span>
+          </div>
+          <div class="about__value about__value--pink">
+            <span class="about__value-num">&hearts;</span>
+            <span>Hecho a mano</span>
+          </div>
+        </div>
+        <p class="about__quote">"Feel good, snack better."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ INSTAGRAM / SOCIAL ════════ -->
+  <section class="social">
+    <div class="social__inner reveal">
+      <h2 class="social__headline">Síguenos en Instagram</h2>
+      <p class="social__handle">@sakaro____</p>
+      <div class="social__grid">
+        <div class="social__img"><img src="images/datiles-hero.jpg" alt="SAKARO" loading="lazy"></div>
+        <div class="social__img"><img src="images/spread-almendra.jpg" alt="SAKARO" loading="lazy"></div>
+        <div class="social__img"><img src="images/datiles-barks.jpg" alt="SAKARO" loading="lazy"></div>
+        <div class="social__img"><img src="images/spread-nuez-india-matcha.jpg" alt="SAKARO" loading="lazy"></div>
+      </div>
+      <a href="https://instagram.com/sakaro____" class="btn btn--navy" target="_blank" rel="noopener">Seguir en Instagram</a>
+    </div>
+  </section>
+
+  <!-- ════════ CONTACTO ════════ -->
+  <section class="contact" id="contacto">
+    <div class="contact__inner">
+      <div class="contact__info reveal">
+        <span class="contact__label">Contáctanos</span>
+        <h2 class="contact__headline">¿Lista para probar<br>algo increíble?</h2>
+        <p>Escríbenos y haz tu pedido. Envíos a toda la República Mexicana.</p>
+        <div class="contact__details">
+          <a href="mailto:info@sakaro.mx">info@sakaro.mx</a>
+          <a href="https://instagram.com/sakaro____" target="_blank" rel="noopener">@sakaro____</a>
+          <span>sakaro.mx</span>
+        </div>
+        <p class="contact__slogan">"A better date than your last one!"</p>
+      </div>
+      <form class="contact__form reveal" onsubmit="return false;">
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu email" required>
+        <textarea placeholder="¿Qué te gustaría pedir?" rows="4" required></textarea>
+        <button type="submit" class="btn btn--salmon">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="footer">
+    <div class="footer__marquee">
+      <div class="footer__marquee-track">
+        <span>feel good, snack better.</span>
+        <span>&middot;</span>
+        <span>a better date than your last one!</span>
+        <span>&middot;</span>
+        <span>addictive? maybe. worth it? absolutely.</span>
+        <span>&middot;</span>
+        <span>feel good, snack better.</span>
+        <span>&middot;</span>
+        <span>a better date than your last one!</span>
+        <span>&middot;</span>
+        <span>addictive? maybe. worth it? absolutely.</span>
+        <span>&middot;</span>
+      </div>
+    </div>
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">SAKARO</span>
+        <p class="footer__tagline">Feel good, snack better.</p>
+        <p class="footer__mission">Nutrir cuerpos sin sacrificar el sabor.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Productos</h4>
+        <a href="#productos">Dátiles</a>
+        <a href="#spreads">Spreads</a>
+      </div>
+      <div class="footer__links">
+        <h4>SAKARO</h4>
+        <a href="#nosotros">Quiénes somos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="footer__links">
+        <h4>Social</h4>
+        <a href="https://instagram.com/sakaro____" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:info@sakaro.mx">Email</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2024 SAKARO. Hecho en México con mucho amor.</p>
+      <p class="footer__slogan">"Addictive? Maybe. Worth it? Absolutely."</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
