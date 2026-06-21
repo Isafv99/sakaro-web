@@ -23,8 +23,9 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#productos">Dátiles</a></li>
         <li><a href="#spreads">Spreads</a></li>
+        <li><a href="recetas.html">Recetas</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#contacto">Dónde Comprar</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
       </ul>
       <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
@@ -45,7 +46,7 @@
     <div class="hero__content">
       <h1 class="hero__headline">SAKARO</h1>
       <p class="hero__tagline-big">feel good, snack better.</p>
-      <p class="hero__sub">Life's too short for forgettable snacks.</p>
+      <p class="hero__sub">Nut butters hechas con ingredientes reales. Dátiles rellenos cubiertos de chocolate 70%. Snacks que nutren sin sacrificar el sabor.</p>
       <div class="hero__buttons">
         <a href="#productos" class="btn btn--pink">Ver productos</a>
       </div>
@@ -135,30 +136,23 @@
 
   <!-- ════════ CONEXIÓN SPREADS ↔ DÁTILES ════════ -->
   <section class="connection">
-    <div class="connection__inner">
-      <div class="connection__col reveal">
-        <div class="connection__img-wrap">
-          <img src="images/spread-almendra.jpg" alt="Spread de almendra SAKARO" loading="lazy">
-        </div>
-        <h3>Nuestros spreads</h3>
-        <p>Spreads hechos con un solo ingrediente (más un toque de sal).</p>
-      </div>
-      <div class="connection__bridge reveal">
-        <div class="connection__arrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <p>Los mismos spreads que amas... ahora dentro de un dátil.</p>
-        <div class="connection__arrow connection__arrow--flip">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </div>
-      <div class="connection__col reveal">
-        <div class="connection__img-wrap">
-          <img src="images/datiles-hero.jpg" alt="Dátiles rellenos SAKARO" loading="lazy">
-        </div>
-        <h3>Nuestros dátiles</h3>
-        <p>Dátiles medjool rellenos de nuestros spreads, cubiertos con chocolate 70%.</p>
-      </div>
+    <div class="connection__header reveal">
+      <h2 class="connection__title">Dos formas de disfrutar SAKARO</h2>
+      <p class="connection__subtitle">Los mismos spreads que amas... ahora también dentro de un dátil.</p>
+    </div>
+    <div class="connection__cards">
+      <a href="#spreads" class="connection-card connection-card--teal reveal">
+        <div class="connection-card__icon">🥜</div>
+        <h3 class="connection-card__name">Nuestros Spreads</h3>
+        <p class="connection-card__desc">Nut butters hechas con un solo ingrediente (más un toque de sal). 7 sabores para untar en todo.</p>
+        <span class="connection-card__link">Ver spreads &rarr;</span>
+      </a>
+      <a href="#productos" class="connection-card connection-card--salmon reveal">
+        <div class="connection-card__icon">🍫</div>
+        <h3 class="connection-card__name">Nuestros Dátiles</h3>
+        <p class="connection-card__desc">Dátiles medjool rellenos de nuestros spreads, cubiertos con chocolate 70%. Best enjoyed cold!</p>
+        <span class="connection-card__link">Ver dátiles &rarr;</span>
+      </a>
     </div>
     <p class="connection__slogan reveal">Addictive? Maybe. Worth it? Absolutely.</p>
   </section>
@@ -177,7 +171,7 @@
           <img src="images/bolsa-ab-barks-sinFondo.png" alt="Almond Butter Date Barks" loading="lazy">
         </div>
         <div class="product-card__body">
-          <h3 class="product-card__name">Almond Butter Date Barks</h3>
+          <h3 class="product-card__name"><span class="product-card__bubble product-card__bubble--teal">Almond Butter Date Barks</span></h3>
           <p class="product-card__desc">Láminas de dátil con crema de almendra, chocolate oscuro 70% y sal de mar.</p>
           <div class="product-card__footer">
             <span class="product-card__price">$175 <small>MXN</small></span>
@@ -191,7 +185,7 @@
           <img src="images/bolsa-ab-dates-sinFondo.png" alt="Almond Butter Stuffed Dates" loading="lazy">
         </div>
         <div class="product-card__body">
-          <h3 class="product-card__name">Almond Butter Stuffed Dates</h3>
+          <h3 class="product-card__name"><span class="product-card__bubble product-card__bubble--salmon">Almond Butter Stuffed Dates</span></h3>
           <p class="product-card__desc">Dátiles medjool rellenos de crema de almendra, cubiertos con chocolate 70%.</p>
           <div class="product-card__footer">
             <span class="product-card__price">$175 <small>MXN</small></span>
@@ -205,7 +199,7 @@
           <img src="images/bolsa-pb-barks-sinFondo.png" alt="Peanut Butter Date Barks" loading="lazy">
         </div>
         <div class="product-card__body">
-          <h3 class="product-card__name">Peanut Butter Date Barks</h3>
+          <h3 class="product-card__name"><span class="product-card__bubble product-card__bubble--navy">Peanut Butter Date Barks</span></h3>
           <p class="product-card__desc">Láminas de dátil con crema de cacahuate, chocolate oscuro 70% y sal de mar.</p>
           <div class="product-card__footer">
             <span class="product-card__price">$175 <small>MXN</small></span>
@@ -219,7 +213,7 @@
           <img src="images/bolsa-pb-dates-sinFondo.png" alt="Peanut Butter Stuffed Dates" loading="lazy">
         </div>
         <div class="product-card__body">
-          <h3 class="product-card__name">Peanut Butter Stuffed Dates</h3>
+          <h3 class="product-card__name"><span class="product-card__bubble product-card__bubble--pink">Peanut Butter Stuffed Dates</span></h3>
           <p class="product-card__desc">Dátiles medjool rellenos de crema de cacahuate, cubiertos con chocolate 70%.</p>
           <div class="product-card__footer">
             <span class="product-card__price">$175 <small>MXN</small></span>
@@ -262,6 +256,7 @@
               <span class="spread-card__price">$200 <small>MXN</small></span>
               <span class="spread-card__weight">230g</span>
             </div>
+            <span class="spread-card__more">Ver más &rarr;</span>
           </div>
         </a>
       </article>
@@ -278,6 +273,7 @@
               <span class="spread-card__price">$250 <small>MXN</small></span>
               <span class="spread-card__weight">230g</span>
             </div>
+            <span class="spread-card__more">Ver más &rarr;</span>
           </div>
         </a>
       </article>
@@ -294,6 +290,7 @@
               <span class="spread-card__price">$250 <small>MXN</small></span>
               <span class="spread-card__weight">230g</span>
             </div>
+            <span class="spread-card__more">Ver más &rarr;</span>
           </div>
         </a>
       </article>
@@ -310,6 +307,7 @@
               <span class="spread-card__price">$200 <small>MXN</small></span>
               <span class="spread-card__weight">230g</span>
             </div>
+            <span class="spread-card__more">Ver más &rarr;</span>
           </div>
         </a>
       </article>
@@ -326,6 +324,7 @@
               <span class="spread-card__price">$250 <small>MXN</small></span>
               <span class="spread-card__weight">230g</span>
             </div>
+            <span class="spread-card__more">Ver más &rarr;</span>
           </div>
         </a>
       </article>
@@ -342,6 +341,7 @@
               <span class="spread-card__price">$250 <small>MXN</small></span>
               <span class="spread-card__weight">230g</span>
             </div>
+            <span class="spread-card__more">Ver más &rarr;</span>
           </div>
         </a>
       </article>
@@ -358,6 +358,7 @@
               <span class="spread-card__price">$250 <small>MXN</small></span>
               <span class="spread-card__weight">230g</span>
             </div>
+            <span class="spread-card__more">Ver más &rarr;</span>
           </div>
         </a>
       </article>
@@ -444,7 +445,7 @@
       <div class="recipes__text reveal">
         <h2 class="recipes__headline">úsalos en todo.</h2>
         <p class="recipes__desc">Porque un buen spread no debería quedarse solo en el frasco.</p>
-        <a href="#contacto" class="btn btn--salmon">Ver recetas</a>
+        <a href="recetas.html" class="btn btn--salmon">Ver recetas</a>
       </div>
       <div class="recipes__image reveal">
         <img src="images/spread-pancakes.jpg" alt="Pancakes con spread SAKARO" loading="lazy">
@@ -467,26 +468,16 @@
     </div>
   </section>
 
-  <!-- ════════ CONTACTO ════════ -->
-  <section class="contact" id="contacto">
-    <div class="contact__inner">
-      <div class="contact__info reveal">
-        <span class="contact__label">Contáctanos</span>
-        <h2 class="contact__headline">¿Lista para probar<br>algo increíble?</h2>
-        <p>Escríbenos y haz tu pedido. Envíos a toda la República Mexicana.</p>
-        <div class="contact__details">
-          <a href="mailto:info@sakaro.mx">info@sakaro.mx</a>
-          <a href="https://instagram.com/sakaro____" target="_blank" rel="noopener">@sakaro____</a>
-          <span>sakaro.mx</span>
-        </div>
-        <p class="contact__slogan">A better date than your last one!</p>
-      </div>
-      <form class="contact__form reveal" onsubmit="return false;">
-        <input type="text" placeholder="Tu nombre" required>
+  <!-- ════════ NEWSLETTER ════════ -->
+  <section class="newsletter" id="contacto">
+    <div class="newsletter__inner reveal">
+      <h2 class="newsletter__headline">Únete a la familia SAKARO</h2>
+      <p class="newsletter__desc">Recibe recetas, tips y descuentos exclusivos directo a tu inbox. Sin spam, lo prometemos.</p>
+      <form class="newsletter__form" onsubmit="return false;">
         <input type="email" placeholder="Tu email" required>
-        <textarea placeholder="¿Qué te gustaría pedir?" rows="4" required></textarea>
-        <button type="submit" class="btn btn--salmon">Enviar mensaje</button>
+        <button type="submit" class="btn btn--pink">Suscribirme</button>
       </form>
+      <p class="newsletter__note">Envío gratis en tu primera compra al suscribirte.</p>
     </div>
   </section>
 
@@ -510,24 +501,26 @@
     </div>
     <div class="footer__inner">
       <div class="footer__brand">
-        <img src="images/sakaro-logo.png" alt="SAKARO" class="footer__logo-img">
+        <span class="footer__logo-text">SAKARO</span>
         <p class="footer__tagline">Feel good, snack better.</p>
-        <p class="footer__mission">Nutrir cuerpos sin sacrificar el sabor.</p>
+        <p class="footer__mission">Snacks que nutren sin sacrificar el sabor. Hechos a mano en México con ingredientes reales.</p>
       </div>
       <div class="footer__links">
         <h4>Productos</h4>
         <a href="#productos">Dátiles</a>
         <a href="#spreads">Spreads</a>
+        <a href="recetas.html">Recetas</a>
       </div>
       <div class="footer__links">
         <h4>SAKARO</h4>
         <a href="#nosotros">Quiénes somos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="carrito.html">Carrito</a>
       </div>
       <div class="footer__links">
-        <h4>Social</h4>
-        <a href="https://instagram.com/sakaro____" target="_blank" rel="noopener">Instagram</a>
-        <a href="mailto:info@sakaro.mx">Email</a>
+        <h4>Contacto</h4>
+        <a href="https://instagram.com/sakaro____" target="_blank" rel="noopener">@sakaro____</a>
+        <a href="mailto:info@sakaro.mx">info@sakaro.mx</a>
+        <a href="https://wa.me/5215512345678" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="footer__bottom">

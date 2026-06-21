@@ -20,8 +20,9 @@
         <li><a href="index.html#inicio">Inicio</a></li>
         <li><a href="index.html#productos">Dátiles</a></li>
         <li><a href="index.html#spreads">Spreads</a></li>
+        <li><a href="recetas.html">Recetas</a></li>
         <li><a href="index.html#nosotros">Nosotros</a></li>
-        <li><a href="index.html#contacto">Dónde Comprar</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
       </ul>
       <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
@@ -119,7 +120,7 @@
             <span>Total</span>
             <span>$${total} MXN</span>
           </div>
-          <a href="#" class="btn btn--pink cart-summary__btn">Proceder al pago</a>
+          <a href="#" class="btn btn--pink cart-summary__btn" onclick="checkoutWhatsApp(event)">Pedir por WhatsApp</a>
         </div>
       `;
     }
@@ -133,6 +134,24 @@
     function removeItem(id) {
       SakaroCart.removeItem(id);
       renderCart();
+    }
+
+    function checkoutWhatsApp(e) {
+      e.preventDefault();
+      const items = SakaroCart.getItems();
+      if (items.length === 0) return;
+      const subtotal = SakaroCart.getTotal();
+      const shipping = subtotal >= 500 ? 0 : 80;
+      const total = subtotal + shipping;
+      let msg = '¡Hola! Me gustaría hacer un pedido:\n\n';
+      items.forEach(item => {
+        msg += `• ${item.name} x${item.qty} — $${item.price * item.qty} MXN\n`;
+      });
+      msg += `\nSubtotal: $${subtotal} MXN`;
+      msg += `\nEnvío: ${shipping === 0 ? 'Gratis' : '$' + shipping + ' MXN'}`;
+      msg += `\nTotal: $${total} MXN`;
+      const encoded = encodeURIComponent(msg);
+      window.open('https://wa.me/5215512345678?text=' + encoded, '_blank');
     }
 
     document.addEventListener('DOMContentLoaded', renderCart);

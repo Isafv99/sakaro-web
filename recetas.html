@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetas — SAKARO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar is-scrolled" id="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__brand">
+        <a href="index.html" class="navbar__logo">SAKARO</a>
+        <span class="navbar__tagline">feel good, snack better.</span>
+      </div>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#productos">Dátiles</a></li>
+        <li><a href="index.html#spreads">Spreads</a></li>
+        <li><a href="recetas.html">Recetas</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+      </ul>
+      <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="navbar__cart-count" id="cartCount">0</span>
+      </a>
+      <a href="index.html#productos" class="navbar__cta">Comprar</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="recetas-page">
+    <div class="recetas-page__inner">
+      <a href="index.html" class="pdp__back">&larr; Volver al inicio</a>
+      <div class="recetas-page__header">
+        <h1 class="recetas-page__title">Recetas SAKARO</h1>
+        <p class="recetas-page__desc">Porque un buen spread no debería quedarse solo en el frasco. Inspírate con estas ideas fáciles y deliciosas.</p>
+      </div>
+
+      <div class="recetas-grid">
+
+        <article class="receta-card">
+          <div class="receta-card__badge receta-card__badge--teal">Spread</div>
+          <h2 class="receta-card__title">Overnight Oats con Almond Butter</h2>
+          <p class="receta-card__intro">El desayuno perfecto para mañanas ocupadas. Prepáralo la noche anterior y disfruta al día siguiente.</p>
+          <div class="receta-card__details">
+            <div class="receta-card__section">
+              <h3>Ingredientes</h3>
+              <ul>
+                <li>½ taza de avena</li>
+                <li>¾ taza de leche de almendra</li>
+                <li>2 cucharadas de SAKARO Almond Butter</li>
+                <li>1 cucharada de semillas de chía</li>
+                <li>½ plátano en rodajas</li>
+                <li>Miel al gusto (opcional)</li>
+              </ul>
+            </div>
+            <div class="receta-card__section">
+              <h3>Preparación</h3>
+              <ol>
+                <li>Mezcla la avena, leche y chía en un frasco.</li>
+                <li>Agrega una cucharada de Almond Butter y revuelve.</li>
+                <li>Tapa y refrigera toda la noche (mín. 6 horas).</li>
+                <li>Al servir, agrega rodajas de plátano y la segunda cucharada de spread encima.</li>
+                <li>Disfruta frío directo del frasco.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="receta-card">
+          <div class="receta-card__badge receta-card__badge--teal">Spread</div>
+          <h2 class="receta-card__title">Smoothie de Cashew & Matcha</h2>
+          <p class="receta-card__intro">Energía verde para empezar el día con todo. Antioxidantes + proteína en un solo vaso.</p>
+          <div class="receta-card__details">
+            <div class="receta-card__section">
+              <h3>Ingredientes</h3>
+              <ul>
+                <li>1 plátano congelado</li>
+                <li>1 taza de leche de coco</li>
+                <li>2 cucharadas de SAKARO Cashew & Matcha Butter</li>
+                <li>½ taza de espinaca baby</li>
+                <li>1 cucharadita de miel</li>
+                <li>Hielo al gusto</li>
+              </ul>
+            </div>
+            <div class="receta-card__section">
+              <h3>Preparación</h3>
+              <ol>
+                <li>Agrega todos los ingredientes a la licuadora.</li>
+                <li>Licúa por 60 segundos hasta obtener una mezcla cremosa.</li>
+                <li>Sirve en un vaso alto y decora con un drizzle de Cashew Matcha Butter encima.</li>
+                <li>Disfruta inmediatamente.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="receta-card">
+          <div class="receta-card__badge receta-card__badge--teal">Spread</div>
+          <h2 class="receta-card__title">Tostada de Hazelnut & Cocoa con Fresas</h2>
+          <p class="receta-card__intro">La versión saludable de tu tostada de nutella favorita. Sin culpa, con mucho sabor.</p>
+          <div class="receta-card__details">
+            <div class="receta-card__section">
+              <h3>Ingredientes</h3>
+              <ul>
+                <li>2 rebanadas de pan artesanal</li>
+                <li>3 cucharadas de SAKARO Hazelnut & Cocoa Butter</li>
+                <li>5-6 fresas en rodajas</li>
+                <li>Semillas de hemp</li>
+                <li>Miel de abeja (opcional)</li>
+              </ul>
+            </div>
+            <div class="receta-card__section">
+              <h3>Preparación</h3>
+              <ol>
+                <li>Tuesta el pan a tu gusto.</li>
+                <li>Unta generosamente el Hazelnut & Cocoa Butter sobre cada rebanada.</li>
+                <li>Agrega rodajas de fresa encima.</li>
+                <li>Espolvorea semillas de hemp y un toque de miel.</li>
+                <li>Disfruta con un café caliente.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="receta-card">
+          <div class="receta-card__badge receta-card__badge--salmon">Dátil</div>
+          <h2 class="receta-card__title">Snack Board con Dátiles SAKARO</h2>
+          <p class="receta-card__intro">La tabla de snacks perfecta para compartir. Impresiona sin esfuerzo.</p>
+          <div class="receta-card__details">
+            <div class="receta-card__section">
+              <h3>Ingredientes</h3>
+              <ul>
+                <li>4 Almond Butter Stuffed Dates</li>
+                <li>4 Peanut Butter Date Barks</li>
+                <li>Fresas y blueberries</li>
+                <li>Nueces mixtas</li>
+                <li>Queso de cabra (opcional)</li>
+                <li>Galletas de arroz</li>
+              </ul>
+            </div>
+            <div class="receta-card__section">
+              <h3>Preparación</h3>
+              <ol>
+                <li>Saca los dátiles del refri 5 minutos antes.</li>
+                <li>Acomoda los dátiles y barks en una tabla o plato grande.</li>
+                <li>Distribuye las frutas, nueces y galletas alrededor.</li>
+                <li>Agrega el queso de cabra si lo deseas.</li>
+                <li>Sirve y deja que todos se sirvan.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="receta-card">
+          <div class="receta-card__badge receta-card__badge--salmon">Dátil</div>
+          <h2 class="receta-card__title">Dátiles SAKARO Congelados</h2>
+          <p class="receta-card__intro">El hack más fácil: congela tus dátiles para un snack que sabe a helado de chocolate.</p>
+          <div class="receta-card__details">
+            <div class="receta-card__section">
+              <h3>Ingredientes</h3>
+              <ul>
+                <li>1 bolsa de Almond Butter Date Barks o Stuffed Dates</li>
+                <li>Sal de mar en hojuelas (opcional)</li>
+              </ul>
+            </div>
+            <div class="receta-card__section">
+              <h3>Preparación</h3>
+              <ol>
+                <li>Coloca los dátiles en un contenedor hermético.</li>
+                <li>Congela por mínimo 2 horas (o toda la noche).</li>
+                <li>Saca del congelador y espera 2 minutos antes de comer.</li>
+                <li>Agrega un toque de sal de mar en hojuelas si lo deseas.</li>
+                <li>La textura del chocolate crujiente + el relleno cremoso = increíble.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="receta-card">
+          <div class="receta-card__badge receta-card__badge--salmon">Dátil</div>
+          <h2 class="receta-card__title">Dátil Sundae</h2>
+          <p class="receta-card__intro">Postre express que no necesita horno. Tus dátiles SAKARO como la estrella del show.</p>
+          <div class="receta-card__details">
+            <div class="receta-card__section">
+              <h3>Ingredientes</h3>
+              <ul>
+                <li>2-3 Peanut Butter Stuffed Dates</li>
+                <li>1 bola de helado de vainilla</li>
+                <li>1 cucharada de SAKARO Peanut Butter</li>
+                <li>Granola</li>
+                <li>Chocolate derretido</li>
+              </ul>
+            </div>
+            <div class="receta-card__section">
+              <h3>Preparación</h3>
+              <ol>
+                <li>Corta los dátiles en mitades.</li>
+                <li>Coloca la bola de helado en un bowl.</li>
+                <li>Acomoda las mitades de dátil alrededor.</li>
+                <li>Drizzlea el Peanut Butter y chocolate derretido encima.</li>
+                <li>Agrega granola y disfruta inmediatamente.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo-text">SAKARO</span>
+        <p class="footer__tagline">Feel good, snack better.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Productos</h4>
+        <a href="index.html#productos">Dátiles</a>
+        <a href="index.html#spreads">Spreads</a>
+      </div>
+      <div class="footer__links">
+        <h4>SAKARO</h4>
+        <a href="index.html#nosotros">Quiénes somos</a>
+        <a href="carrito.html">Carrito</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2024 SAKARO. Hecho en México con mucho amor.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>
