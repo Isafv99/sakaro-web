@@ -13,7 +13,7 @@
   <nav class="navbar is-scrolled" id="navbar">
     <div class="navbar__inner">
       <div class="navbar__brand">
-        <a href="index.html" class="navbar__logo">SAKARO</a>
+        <a href="index.html" class="navbar__logo"><img src="images/sakaro-logo.png" alt="SAKARO" class="navbar__logo-img"></a>
         <span class="navbar__tagline">feel good, snack better.</span>
       </div>
       <ul class="navbar__links" id="navLinks">
@@ -22,7 +22,6 @@
         <li><a href="index.html#spreads">Spreads</a></li>
         <li><a href="recetas.html">Recetas</a></li>
         <li><a href="index.html#nosotros">Nosotros</a></li>
-        <li><a href="carrito.html">Carrito</a></li>
       </ul>
       <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
@@ -44,10 +43,10 @@
         <a href="index.html" class="pdp__back">&larr; Regresar</a>
         <h1 class="pdp__name">Peanut Butter Stuffed Dates</h1>
         <div class="pdp__meta">
-          <span class="pdp__price">$175 <small>MXN</small></span>
+          <span class="pdp__price">$250 <small>MXN</small></span>
           <span class="pdp__weight">150g</span>
         </div>
-        <p class="pdp__cold">Best enjoyed cold! &#129482;</p>
+        <p class="pdp__cold">Best enjoyed cold!</p>
         <p class="pdp__desc">Dátiles medjool rellenos de crema de cacahuate, cubiertos con chocolate 70%.</p>
         <div class="pdp__badges">
           <span>Sin lácteos</span>
@@ -74,7 +73,7 @@
     <div class="footer__inner">
       <div class="footer__brand">
         <span class="footer__logo-text">SAKARO</span>
-        <p class="footer__tagline">Feel good, snack better.</p>
+        <p class="footer__tagline">feel good, snack better.</p>
       </div>
       <div class="footer__links">
         <h4>Productos</h4>
@@ -94,7 +93,7 @@
 
   <script src="cart.js"></script>
   <script>
-    const PRODUCT = { id: 'datil-pb-dates', name: 'Peanut Butter Stuffed Dates', price: 175, img: 'images/bolsa-pb-dates-sinFondo.png' };
+    const PRODUCT = { id: 'datil-pb-dates', name: 'Peanut Butter Stuffed Dates', price: 250, img: 'images/bolsa-pb-dates-sinFondo.png' };
     function changeQty(d) {
       const el = document.getElementById('qty');
       el.textContent = Math.max(1, parseInt(el.textContent) + d);

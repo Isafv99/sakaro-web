@@ -440,6 +440,7 @@ ul { list-style: none; }
 .products__title {
   font-family: var(--font-display);
   font-size: clamp(40px, 5vw, 56px);
+  color: var(--color-navy);
   margin-bottom: 16px;
 }
 .products__subtitle {
