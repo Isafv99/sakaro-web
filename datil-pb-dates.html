@@ -36,17 +36,9 @@
 
   <section class="pdp">
     <div class="pdp__inner">
-      <div class="product-carousel" id="productCarousel">
-        <div class="carousel-track" id="carouselTrack">
-          <img src="images/bolsa-pb-dates-sinFondo.png" alt="Peanut Butter Stuffed Dates">
-          <img src="images/datiles-hero-alt.jpg" alt="Peanut Butter Stuffed Dates">
-          <img src="images/datiles-hero.jpg" alt="Datiles SAKARO">
-          <img src="images/datiles-mano.png" alt="Datiles en mano">
-        </div>
-        <button class="carousel-btn carousel-prev" id="carouselPrev">&lsaquo;</button>
-        <button class="carousel-btn carousel-next" id="carouselNext">&rsaquo;</button>
+      <div class="pdp__image">
+        <img src="images/bolsa-pb-dates-sinFondo.png" alt="Peanut Butter Stuffed Dates">
       </div>
-      <div class="carousel-dots" id="carouselDots"></div>
       <div class="pdp__info">
         <a href="index.html" class="pdp__back">&larr; Regresar</a>
         <h1 class="pdp__name">Peanut Butter Stuffed Dates</h1>
@@ -74,6 +66,11 @@
     <div class="pdp__ingredients">
       <h3>Ingredientes</h3>
       <p>Dátil medjool, chocolate 70%, crema de cacahuate, sal de mar.</p>
+    </div>
+    <div class="pdp__photos">
+      <img src="images/datiles-hero-alt.jpg" alt="Peanut Butter Stuffed Dates" loading="lazy">
+      <img src="images/datiles-hero.jpg" alt="Datiles SAKARO" loading="lazy">
+      <img src="images/datiles-mano.png" alt="Datiles en mano" loading="lazy">
     </div>
   </section>
 
@@ -112,41 +109,6 @@
       document.getElementById('confirmMsg').textContent = '¡Agregado! \u{1F6D2}';
       setTimeout(() => document.getElementById('confirmMsg').textContent = '', 2500);
     }
-    (function() {
-      var currentIndex = 0;
-      var track = document.getElementById('carouselTrack');
-      var imgs = track.querySelectorAll('img');
-      var total = imgs.length;
-      var dotsContainer = document.getElementById('carouselDots');
-      for (var i = 0; i < total; i++) {
-        var dot = document.createElement('button');
-        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
-        dot.setAttribute('data-index', i);
-        dot.onclick = function() { goTo(parseInt(this.getAttribute('data-index'))); };
-        dotsContainer.appendChild(dot);
-      }
-      function updateDots() {
-        var dots = dotsContainer.querySelectorAll('.carousel-dot');
-        for (var j = 0; j < dots.length; j++) {
-          dots[j].classList.toggle('is-active', j === currentIndex);
-        }
-      }
-      function goTo(n) {
-        currentIndex = n;
-        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-        updateDots();
-      }
-      document.getElementById('carouselNext').onclick = function() {
-        currentIndex++;
-        if (currentIndex >= total) currentIndex = 0;
-        goTo(currentIndex);
-      };
-      document.getElementById('carouselPrev').onclick = function() {
-        currentIndex--;
-        if (currentIndex < 0) currentIndex = total - 1;
-        goTo(currentIndex);
-      };
-    })();
   </script>
   <script src="script.js"></script>
 </body>
