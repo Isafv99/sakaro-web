@@ -120,7 +120,7 @@ ul { list-style: none; }
   font-style: italic;
   transition: color 0.3s;
 }
-.navbar__links { display: flex; gap: 32px; }
+.navbar__links { display: flex; gap: 32px; margin: 0 auto; }
 .navbar__links a {
   font-size: 14px;
   font-weight: 500;
@@ -1248,9 +1248,40 @@ ul { list-style: none; }
   line-height: 1.7;
 }
 
+.pdp__gallery {
+  max-width: 1100px;
+  margin: 48px auto 0;
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
+.pdp__gallery img {
+  height: 200px;
+  flex: 1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.recetas-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto 64px;
+}
+.recetas-photo-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
 @media (max-width: 768px) {
   .pdp__inner { grid-template-columns: 1fr; gap: 32px; }
   .pdp__image { padding: 32px; }
+  .pdp__gallery { flex-wrap: wrap; }
+  .pdp__gallery img { flex: 1 1 45%; height: 160px; }
+  .recetas-photo-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ═══════════════════════════════════════
@@ -1625,6 +1656,7 @@ ul { list-style: none; }
 .recetas-page__title {
   font-family: var(--font-display);
   font-size: clamp(40px, 5vw, 56px);
+  color: var(--color-navy);
   margin-bottom: 16px;
 }
 .recetas-page__desc {
