@@ -110,6 +110,10 @@ ul { list-style: none; }
   letter-spacing: 0.06em;
   transition: color 0.3s;
 }
+.navbar__logo-img {
+  height: 32px;
+  display: block;
+}
 .navbar__tagline {
   font-size: 12px;
   color: rgba(255,255,255,0.8);
@@ -574,7 +578,7 @@ ul { list-style: none; }
 .spreads-intro__headline {
   font-family: var(--font-display);
   font-size: clamp(40px, 5vw, 56px);
-  color: var(--color-text);
+  color: var(--color-navy);
   margin-bottom: 16px;
 }
 .spreads-intro__desc {
@@ -848,6 +852,7 @@ ul { list-style: none; }
 .social__headline {
   font-family: var(--font-display);
   font-size: clamp(32px, 4vw, 44px);
+  color: var(--color-navy);
   margin-bottom: 8px;
 }
 .social__handle {
