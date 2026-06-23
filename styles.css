@@ -150,7 +150,8 @@ ul { list-style: none; }
   align-items: center;
   color: #fff;
   transition: color 0.3s;
-  margin-right: 48px;
+  margin-left: auto;
+  margin-right: 16px;
 }
 .navbar.is-scrolled .navbar__cart { color: var(--color-navy); }
 .navbar__cart svg { stroke: currentColor; }
@@ -1281,7 +1282,6 @@ ul { list-style: none; }
   flex: 1;
   object-fit: contain;
   border-radius: 16px;
-  background: #f5f0eb;
 }
 
 .recetas-photo-grid {
