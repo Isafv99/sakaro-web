@@ -1276,13 +1276,18 @@ ul { list-style: none; }
   margin: 48px auto 0;
   display: flex;
   gap: 16px;
+}
+.pdp__photos .pdp__photo-card {
+  flex: 1;
+  height: 250px;
+  border-radius: 16px;
+  background-color: #f5f0eb;
   overflow: hidden;
 }
-.pdp__photos img {
-  height: 250px;
-  flex: 1;
+.pdp__photos .pdp__photo-card img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 16px;
 }
 
 .recetas-photo-grid {
