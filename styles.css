@@ -1276,11 +1276,12 @@ ul { list-style: none; }
   margin: 48px auto 0;
   display: flex;
   gap: 16px;
+  overflow: hidden;
 }
 .pdp__photos img {
-  height: 220px;
+  height: 250px;
   flex: 1;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 16px;
 }
 
