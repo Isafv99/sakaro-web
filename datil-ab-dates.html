@@ -36,8 +36,16 @@
 
   <section class="pdp">
     <div class="pdp__inner">
-      <div class="pdp__image">
-        <img src="images/bolsa-ab-dates-sinFondo.png" alt="Almond Butter Stuffed Dates">
+      <div class="pdp__slider" id="pdpSlider">
+        <div class="pdp__slider-track" id="sliderTrack">
+          <div class="pdp__slide pdp__slide--contain"><img src="images/bolsa-ab-dates-sinFondo.png" alt="Almond Butter Stuffed Dates"></div>
+          <div class="pdp__slide"><img src="images/datiles-hero.jpg" alt="Datiles SAKARO"></div>
+          <div class="pdp__slide"><img src="images/datiles-hero-alt.jpg" alt="Almond Butter Stuffed Dates"></div>
+          <div class="pdp__slide"><img src="images/datiles-mano.png" alt="Datiles en mano"></div>
+        </div>
+        <button class="pdp__slider-btn pdp__slider-btn--prev" onclick="slideNav(-1)">&lsaquo;</button>
+        <button class="pdp__slider-btn pdp__slider-btn--next" onclick="slideNav(1)">&rsaquo;</button>
+        <div class="pdp__slider-dots" id="sliderDots"></div>
       </div>
       <div class="pdp__info">
         <a href="index.html" class="pdp__back">&larr; Regresar</a>
@@ -66,11 +74,6 @@
     <div class="pdp__ingredients">
       <h3>Ingredientes</h3>
       <p>Dátil medjool, crema de almendra, chocolate 70%, sal de mar.</p>
-    </div>
-    <div class="pdp__gallery">
-      <img src="images/datiles-hero.jpg" alt="Almond Butter Stuffed Dates" loading="lazy">
-      <img src="images/datiles-hero-alt.jpg" alt="Dátiles SAKARO" loading="lazy">
-      <img src="images/datiles-mano.png" alt="Dátiles en mano" loading="lazy">
     </div>
   </section>
 
@@ -109,6 +112,22 @@
       document.getElementById('confirmMsg').textContent = '¡Agregado! \u{1F6D2}';
       setTimeout(() => document.getElementById('confirmMsg').textContent = '', 2500);
     }
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.pdp__slide');
+    const track = document.getElementById('sliderTrack');
+    const dotsContainer = document.getElementById('sliderDots');
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'pdp__slider-dot' + (i === 0 ? ' is-active' : '');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    });
+    function goToSlide(n) {
+      currentSlide = (n + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+      document.querySelectorAll('.pdp__slider-dot').forEach((d, i) => d.classList.toggle('is-active', i === currentSlide));
+    }
+    function slideNav(dir) { goToSlide(currentSlide + dir); }
   </script>
   <script src="script.js"></script>
 </body>
