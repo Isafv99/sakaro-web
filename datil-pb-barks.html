@@ -36,17 +36,17 @@
 
   <section class="pdp">
     <div class="pdp__inner">
-      <div class="pdp__slider" id="pdpSlider">
-        <div class="pdp__slider-track" id="sliderTrack">
-          <div class="pdp__slide pdp__slide--contain"><img src="images/bolsa-pb-barks-sinFondo.png" alt="Peanut Butter Date Barks"></div>
-          <div class="pdp__slide"><img src="images/datiles-barks.jpg" alt="Peanut Butter Date Barks"></div>
-          <div class="pdp__slide"><img src="images/datiles-barks-alt.jpg" alt="Date Barks SAKARO"></div>
-          <div class="pdp__slide"><img src="images/datiles-detalle.png" alt="Date Barks detalle"></div>
+      <div class="product-carousel" id="productCarousel">
+        <div class="carousel-track" id="carouselTrack">
+          <img src="images/bolsa-pb-barks-sinFondo.png" alt="Peanut Butter Date Barks">
+          <img src="images/datiles-barks.jpg" alt="Peanut Butter Date Barks">
+          <img src="images/datiles-barks-alt.jpg" alt="Date Barks SAKARO">
+          <img src="images/datiles-detalle.png" alt="Date Barks detalle">
         </div>
-        <button class="pdp__slider-btn pdp__slider-btn--prev" onclick="slideNav(-1)">&lsaquo;</button>
-        <button class="pdp__slider-btn pdp__slider-btn--next" onclick="slideNav(1)">&rsaquo;</button>
-        <div class="pdp__slider-dots" id="sliderDots"></div>
+        <button class="carousel-btn carousel-prev" id="carouselPrev">&lsaquo;</button>
+        <button class="carousel-btn carousel-next" id="carouselNext">&rsaquo;</button>
       </div>
+      <div class="carousel-dots" id="carouselDots"></div>
       <div class="pdp__info">
         <a href="index.html" class="pdp__back">&larr; Regresar</a>
         <h1 class="pdp__name">Peanut Butter Date Barks</h1>
@@ -112,22 +112,41 @@
       document.getElementById('confirmMsg').textContent = '¡Agregado! \u{1F6D2}';
       setTimeout(() => document.getElementById('confirmMsg').textContent = '', 2500);
     }
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.pdp__slide');
-    const track = document.getElementById('sliderTrack');
-    const dotsContainer = document.getElementById('sliderDots');
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'pdp__slider-dot' + (i === 0 ? ' is-active' : '');
-      dot.onclick = () => goToSlide(i);
-      dotsContainer.appendChild(dot);
-    });
-    function goToSlide(n) {
-      currentSlide = (n + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-      document.querySelectorAll('.pdp__slider-dot').forEach((d, i) => d.classList.toggle('is-active', i === currentSlide));
-    }
-    function slideNav(dir) { goToSlide(currentSlide + dir); }
+    (function() {
+      var currentIndex = 0;
+      var track = document.getElementById('carouselTrack');
+      var imgs = track.querySelectorAll('img');
+      var total = imgs.length;
+      var dotsContainer = document.getElementById('carouselDots');
+      for (var i = 0; i < total; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('data-index', i);
+        dot.onclick = function() { goTo(parseInt(this.getAttribute('data-index'))); };
+        dotsContainer.appendChild(dot);
+      }
+      function updateDots() {
+        var dots = dotsContainer.querySelectorAll('.carousel-dot');
+        for (var j = 0; j < dots.length; j++) {
+          dots[j].classList.toggle('is-active', j === currentIndex);
+        }
+      }
+      function goTo(n) {
+        currentIndex = n;
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        updateDots();
+      }
+      document.getElementById('carouselNext').onclick = function() {
+        currentIndex++;
+        if (currentIndex >= total) currentIndex = 0;
+        goTo(currentIndex);
+      };
+      document.getElementById('carouselPrev').onclick = function() {
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = total - 1;
+        goTo(currentIndex);
+      };
+    })();
   </script>
   <script src="script.js"></script>
 </body>
