@@ -16,7 +16,6 @@
   --color-cream:    #FFF8F0;
 
   --font-display: 'DM Serif Display', Georgia, serif;
-  --font-sakaro: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -104,7 +103,7 @@ ul { list-style: none; }
 }
 .navbar__brand { display: flex; align-items: center; gap: 10px; }
 .navbar__logo {
-  font-family: var(--font-sakaro);
+  font-family: 'DM Serif Display', serif;
   font-size: 28px;
   font-weight: 700;
   color: #fff;
@@ -230,7 +229,7 @@ ul { list-style: none; }
   max-width: 700px;
 }
 .hero__headline {
-  font-family: var(--font-sakaro);
+  font-family: var(--font-display);
   font-size: clamp(52px, 8vw, 96px);
   color: #fff;
   line-height: 1;
@@ -1619,7 +1618,7 @@ ul { list-style: none; }
    FOOTER LOGO TEXT
    ═══════════════════════════════════════ */
 .footer__logo-text {
-  font-family: var(--font-sakaro);
+  font-family: var(--font-display);
   font-size: 32px;
   color: #fff;
   letter-spacing: 0.06em;
