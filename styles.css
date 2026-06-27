@@ -487,6 +487,7 @@ ul { list-style: none; }
   padding: 24px;
   margin-bottom: 24px;
 }
+.product-card__image a { display: block; cursor: pointer; }
 .product-card__image img {
   max-height: 340px;
   object-fit: contain;
