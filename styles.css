@@ -1052,11 +1052,13 @@ ul { list-style: none; }
     flex-direction: column;
     position: absolute;
     top: 72px; left: 0; right: 0;
+    transform: none;
     background: var(--color-bg);
     padding: 24px;
     gap: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     border-radius: 0 0 20px 20px;
+    z-index: 999;
   }
   .navbar__links.is-open a { color: var(--color-text); font-size: 18px; }
 
