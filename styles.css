@@ -204,6 +204,7 @@ ul { list-style: none; }
    HERO — SPLIT LAYOUT
    ═══════════════════════════════════════ */
 .hero-split {
+  position: relative;
   display: flex;
   min-height: 100vh;
   overflow: hidden;
@@ -221,9 +222,6 @@ ul { list-style: none; }
 .hero-split__right {
   width: 50%;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 .hero-split__right-bg {
@@ -236,14 +234,20 @@ ul { list-style: none; }
 .hero-split__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
 }
 .hero-split__content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 120px 32px 80px;
-  max-width: 540px;
 }
 .hero__headline {
   font-family: var(--font-display);
@@ -1082,6 +1086,7 @@ ul { list-style: none; }
 
   .hero-split {
     flex-direction: column;
+    min-height: 100vh;
   }
   .hero-split__left {
     width: 100%;
@@ -1092,7 +1097,7 @@ ul { list-style: none; }
     height: 60vh;
   }
   .hero-split__content {
-    padding: 40px 24px;
+    padding: 80px 24px 40px;
   }
 
   .intro__inner { grid-template-columns: 1fr; }
