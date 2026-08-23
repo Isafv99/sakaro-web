@@ -54,13 +54,7 @@
           <span>Sin aceite de palma</span>
           <span>Sin endulzantes</span>
         </div>
-        <div class="pdp__qty">
-          <button class="pdp__qty-btn" onclick="changeQty(-1)">-</button>
-          <span class="pdp__qty-num" id="qty">1</span>
-          <button class="pdp__qty-btn" onclick="changeQty(1)">+</button>
-        </div>
-        <button class="btn btn--pink pdp__add" onclick="addToCart()">Agregar al carrito</button>
-        <p class="pdp__confirm" id="confirmMsg"></p>
+        <div id='product-component-1786934915326'></div>
       </div>
     </div>
     <div class="pdp__ingredients">
@@ -96,20 +90,165 @@
     </div>
   </footer>
 
-  <script src="cart.js"></script>
-  <script>
-    const PRODUCT = { id: 'spread-nuez-india', name: 'Cashew Butter', price: 250, img: 'images/spread-nuez-india.jpg' };
-    function changeQty(d) {
-      const el = document.getElementById('qty');
-      el.textContent = Math.max(1, parseInt(el.textContent) + d);
-    }
-    function addToCart() {
-      const qty = parseInt(document.getElementById('qty').textContent);
-      SakaroCart.addItem({ ...PRODUCT, qty });
-      document.getElementById('confirmMsg').textContent = '¡Agregado! \u{1F6D2}';
-      setTimeout(() => document.getElementById('confirmMsg').textContent = '', 2500);
-    }
-  </script>
   <script src="script.js"></script>
+  <script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 's1j1y0-jj.myshopify.com',
+      storefrontAccessToken: '5222d757653f774e0b82100dcf76ac93',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '9168527917307',
+        node: document.getElementById('product-component-1786934915326'),
+        moneyFormat: '%24%20%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        ":hover": {
+          "background-color": "#ce6da2"
+        },
+        "background-color": "#e579b4",
+        ":focus": {
+          "background-color": "#ce6da2"
+        },
+        "border-radius": "29px",
+        "padding-left": "89px",
+        "padding-right": "89px"
+      },
+      "quantityInput": {
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px"
+      }
+    },
+    "text": {
+      "button": "Agregar al carrito"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        ":hover": {
+          "background-color": "#ce6da2"
+        },
+        "background-color": "#e579b4",
+        ":focus": {
+          "background-color": "#ce6da2"
+        },
+        "border-radius": "29px",
+        "padding-left": "89px",
+        "padding-right": "89px"
+      },
+      "quantityInput": {
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px"
+      }
+    },
+    "text": {
+      "button": "Agregar al carrito"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        ":hover": {
+          "background-color": "#ce6da2"
+        },
+        "background-color": "#e579b4",
+        ":focus": {
+          "background-color": "#ce6da2"
+        },
+        "border-radius": "29px"
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Pagar"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#e579b4",
+        ":hover": {
+          "background-color": "#ce6da2"
+        },
+        ":focus": {
+          "background-color": "#ce6da2"
+        }
+      },
+      "count": {
+        "font-size": "16px"
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
 </body>
 </html>
