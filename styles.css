@@ -1213,7 +1213,11 @@ ul { list-style: none; }
   color: #fff;
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+.pdp__cold--pink {
+  background: #F472B6;
+  margin-left: 4px;
 }
 .pdp__desc {
   font-size: 17px;
@@ -1511,6 +1515,7 @@ ul { list-style: none; }
 .product-card__bubble--salmon { background: var(--color-salmon); }
 .product-card__bubble--navy { background: var(--color-navy); }
 .product-card__bubble--pink { background: var(--color-pink); }
+a.product-card__bubble { color: #fff; text-decoration: none; }
 
 /* ═══════════════════════════════════════
    SPREAD CARD "VER MÁS" LINK
