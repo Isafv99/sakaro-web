@@ -248,7 +248,7 @@
     function init(){
       var client=ShopifyBuy.buildClient({domain:'s1j1y0-jj.myshopify.com',storefrontAccessToken:'5222d757653f774e0b82100dcf76ac93'});
       ShopifyBuy.UI.onReady(client).then(function(ui){
-        ui.createComponent('cart',{options:{"cart":{"styles":{"button":{"background-color":"#e579b4",":hover":{"background-color":"#ce6da2"},":focus":{"background-color":"#ce6da2"},"border-radius":"29px"}},"text":{"total":"Subtotal","button":"Pagar"}},"toggle":{"styles":{"toggle":{"background-color":"#e579b4","width":"40px","height":"40px","padding":"8px",":hover":{"background-color":"#ce6da2"},":focus":{"background-color":"#ce6da2"}},"count":{"font-size":"10px"}}}}});
+        ui.createComponent('cart',{options:{"cart":{"styles":{"button":{"background-color":"#F472B6",":hover":{"background-color":"#e25da0"},":focus":{"background-color":"#e25da0"},"border-radius":"29px"}},"text":{"total":"Subtotal","button":"Pagar"}},"toggle":{"styles":{"toggle":{"background-color":"#F472B6","width":"44px","height":"44px","padding":"10px","border-radius":"50%",":hover":{"background-color":"#e25da0"},":focus":{"background-color":"#e25da0"}},"count":{"font-size":"10px"}}}}});
       });
     }
     if(window.ShopifyBuy&&window.ShopifyBuy.UI){init();}
