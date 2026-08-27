@@ -180,16 +180,14 @@ ul { list-style: none; }
   position: fixed !important;
   top: 14px !important;
   bottom: auto !important;
-  right: 20px !important;
+  right: 24px !important;
   z-index: 1001 !important;
-  width: 50px !important;
-  height: 50px !important;
-  overflow: visible !important;
+  width: 44px !important;
+  height: 44px !important;
 }
 .shopify-buy-frame--toggle iframe {
-  width: 50px !important;
-  height: 50px !important;
-  overflow: visible !important;
+  width: 44px !important;
+  height: 44px !important;
 }
 
 /* ═══════════════════════════════════════
