@@ -30,17 +30,32 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Sync Shopify Buy Button cart count with navbar badge
+  // Shopify cart integration
   const cartCountEl = document.getElementById('cartCount');
-  if (cartCountEl) {
-    const syncCart = () => {
-      const shopifyCount = document.querySelector('.shopify-buy__cart-toggle__count');
-      if (shopifyCount) {
-        const count = parseInt(shopifyCount.textContent, 10) || 0;
-        cartCountEl.textContent = count;
-      }
-    };
-    const bodyObserver = new MutationObserver(syncCart);
-    bodyObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
+  const cartLink = document.querySelector('.navbar__cart');
+  let shopifyCart = null;
+
+  function updateBadge() {
+    if (!shopifyCart || !shopifyCart.model || !shopifyCart.model.lineItems) return;
+    let count = 0;
+    shopifyCart.model.lineItems.forEach(item => { count += item.quantity; });
+    if (cartCountEl) cartCountEl.textContent = count;
   }
+
+  window._sakaroSetupCart = function(ui) {
+    if (shopifyCart) return;
+    const carts = ui.components.cart;
+    if (!carts || !carts[0]) return;
+    shopifyCart = carts[0];
+
+    updateBadge();
+    setInterval(updateBadge, 800);
+
+    if (cartLink) {
+      cartLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        shopifyCart.toggleVisibility();
+      });
+    }
+  };
 })();
