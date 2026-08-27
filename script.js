@@ -29,4 +29,18 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Sync Shopify Buy Button cart count with navbar badge
+  const cartCountEl = document.getElementById('cartCount');
+  if (cartCountEl) {
+    const syncCart = () => {
+      const shopifyCount = document.querySelector('.shopify-buy__cart-toggle__count');
+      if (shopifyCount) {
+        const count = parseInt(shopifyCount.textContent, 10) || 0;
+        cartCountEl.textContent = count;
+      }
+    };
+    const bodyObserver = new MutationObserver(syncCart);
+    bodyObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
+  }
 })();
