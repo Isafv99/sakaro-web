@@ -144,33 +144,8 @@ ul { list-style: none; }
   transition: width 0.3s;
 }
 .navbar__links a:hover::after { width: 100%; }
-.navbar__cart {
-  position: relative;
-  display: flex;
-  align-items: center;
-  color: #fff;
-  transition: color 0.3s;
-  margin-left: auto;
-  margin-right: 16px;
-}
-.navbar.is-scrolled .navbar__cart { color: var(--color-navy); }
-.navbar__cart svg { stroke: currentColor; }
-.navbar__cart-count {
-  position: absolute;
-  top: -6px;
-  right: -8px;
-  background: var(--color-pink);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .navbar__cta {
+  margin-right: 52px;
   padding: 10px 28px;
   border-radius: 999px;
   background: var(--color-pink);
@@ -199,6 +174,15 @@ ul { list-style: none; }
 .navbar__hamburger.is-active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
 .navbar__hamburger.is-active span:nth-child(2) { opacity: 0; }
 .navbar__hamburger.is-active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* Shopify cart toggle — repositioned into navbar */
+.shopify-buy-frame--toggle {
+  position: fixed !important;
+  top: 16px !important;
+  bottom: auto !important;
+  right: 24px !important;
+  z-index: 1001 !important;
+}
 
 /* ═══════════════════════════════════════
    HERO — SPLIT LAYOUT
@@ -1068,7 +1052,8 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .navbar__links, .navbar__cta { display: none; }
-  .navbar__hamburger { display: flex; }
+  .navbar__hamburger { display: flex; margin-left: auto; margin-right: 52px; }
+  .shopify-buy-frame--toggle { right: 16px !important; }
   .navbar__links.is-open {
     display: flex;
     flex-direction: column;
