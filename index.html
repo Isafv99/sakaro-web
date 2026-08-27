@@ -26,7 +26,7 @@
         <li><a href="recetas.html">Recetas</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
       </ul>
-      <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
+      <a href="#" class="navbar__cart" aria-label="Carrito">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span class="navbar__cart-count" id="cartCount">0</span>
       </a>
@@ -450,7 +450,7 @@
         <a href="recetas.html" class="btn btn--salmon">Ver recetas</a>
       </div>
       <div class="recipes__image reveal">
-        <img src="images/post mock up.png" alt="SAKARO peanut butter jar" loading="lazy" style="object-fit:cover; object-position:center 30%;">
+        <img src="images/post mock up.png" alt="SAKARO peanut butter jar" loading="lazy" style="object-fit:cover; object-position:72% 45%; transform:scale(2.5); transform-origin:72% 45%;">
       </div>
     </div>
   </section>
@@ -532,6 +532,19 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="cart.js"></script>
+  <script>
+  (function(){
+    var scriptURL='https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+    function init(){
+      var client=ShopifyBuy.buildClient({domain:'s1j1y0-jj.myshopify.com',storefrontAccessToken:'5222d757653f774e0b82100dcf76ac93'});
+      ShopifyBuy.UI.onReady(client).then(function(ui){
+        ui.createComponent('cart',{options:{"cart":{"styles":{"button":{"background-color":"#e579b4",":hover":{"background-color":"#ce6da2"},":focus":{"background-color":"#ce6da2"},"border-radius":"29px"}},"text":{"total":"Subtotal","button":"Pagar"}},"toggle":{"styles":{"toggle":{"background-color":"#e579b4",":hover":{"background-color":"#ce6da2"},":focus":{"background-color":"#ce6da2"}},"count":{"font-size":"16px"}}}}});
+        if(window._sakaroSetupCart) window._sakaroSetupCart(ui);
+      });
+    }
+    if(window.ShopifyBuy&&window.ShopifyBuy.UI){init();}
+    else{var s=document.createElement('script');s.async=true;s.src=scriptURL;s.onload=init;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(s);}
+  })();
+  </script>
 </body>
 </html>

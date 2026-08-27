@@ -23,7 +23,7 @@
         <li><a href="recetas.html">Recetas</a></li>
         <li><a href="index.html#nosotros">Nosotros</a></li>
       </ul>
-      <a href="carrito.html" class="navbar__cart" aria-label="Carrito">
+      <a href="#" class="navbar__cart" aria-label="Carrito">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span class="navbar__cart-count" id="cartCount">0</span>
       </a>
@@ -64,7 +64,7 @@
     </div>
     <div class="pdp__photos">
       <div class="pdp__photo-card"><img src="images/Sakaro_-71.jpg" alt="Peanut Butter Date Barks" loading="lazy"></div>
-      <div class="pdp__photo-card"><img src="images/datiles-barks-alt.jpg" alt="Date Barks SAKARO" loading="lazy"></div>
+      <div class="pdp__photo-card"><img src="images/post mock up.png" alt="SAKARO peanut butter jar" loading="lazy" style="object-fit:cover; object-position:72% 45%; transform:scale(2.5); transform-origin:72% 45%;"></div>
       <div class="pdp__photo-card"><img src="images/datiles-detalle.png" alt="Date Barks detalle" loading="lazy"></div>
     </div>
   </section>
@@ -254,6 +254,7 @@
   }
 },
       });
+      if (window._sakaroSetupCart) window._sakaroSetupCart(ui);
     });
   }
 })();
