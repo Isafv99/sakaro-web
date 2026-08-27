@@ -184,10 +184,12 @@ ul { list-style: none; }
   z-index: 1001 !important;
   width: 44px !important;
   height: 44px !important;
+  overflow: visible !important;
 }
 .shopify-buy-frame--toggle iframe {
   width: 44px !important;
   height: 44px !important;
+  overflow: visible !important;
 }
 
 /* ═══════════════════════════════════════
