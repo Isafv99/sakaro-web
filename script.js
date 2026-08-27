@@ -54,7 +54,12 @@
     if (cartLink) {
       cartLink.addEventListener('click', function(e) {
         e.preventDefault();
-        shopifyCart.toggleVisibility();
+        if (shopifyCart.open) {
+          shopifyCart.open();
+        } else {
+          var toggle = document.querySelector('.shopify-buy__cart-toggle');
+          if (toggle) toggle.click();
+        }
       });
     }
   };
