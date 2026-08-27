@@ -178,10 +178,18 @@ ul { list-style: none; }
 /* Shopify cart toggle — repositioned into navbar */
 .shopify-buy-frame--toggle {
   position: fixed !important;
-  top: 16px !important;
+  top: 14px !important;
   bottom: auto !important;
   right: 24px !important;
   z-index: 1001 !important;
+  width: 44px !important;
+  height: 44px !important;
+  overflow: visible !important;
+}
+.shopify-buy-frame--toggle iframe {
+  width: 44px !important;
+  height: 44px !important;
+  overflow: visible !important;
 }
 
 /* ═══════════════════════════════════════
