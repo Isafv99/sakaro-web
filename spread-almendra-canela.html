@@ -234,20 +234,38 @@
   "toggle": {
     "styles": {
       "toggle": {
-        "background-color": "#F472B6",
+        "background-color": "transparent",
         "width": "44px",
         "height": "44px",
-        "padding": "10px",
-        "border-radius": "50%",
+        "padding": "8px",
+        "position": "relative",
         ":hover": {
-          "background-color": "#e25da0"
+          "background-color": "rgba(244,114,182,0.08)"
         },
         ":focus": {
-          "background-color": "#e25da0"
+          "background-color": "rgba(244,114,182,0.08)"
         }
       },
       "count": {
-        "font-size": "10px"
+        "position": "absolute",
+        "top": "-2px",
+        "right": "-2px",
+        "font-size": "10px",
+        "font-weight": "700",
+        "background-color": "#F472B6",
+        "color": "#fff",
+        "width": "16px",
+        "height": "16px",
+        "line-height": "16px",
+        "border-radius": "50%",
+        "padding": "0",
+        "min-width": "0",
+        "text-align": "center"
+      },
+      "iconPath": {
+        "fill": "none",
+        "stroke": "#F472B6",
+        "stroke-width": "1.5"
       }
     }
   }
