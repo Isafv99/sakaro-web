@@ -27,14 +27,6 @@
       <button class="navbar__hamburger" id="hamburger" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
-      <button class="navbar__cart" id="customCartBtn" aria-label="Carrito">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-pink)">
-          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <path d="M16 10a4 4 0 01-8 0"/>
-        </svg>
-        <span class="navbar__cart-badge" id="cartBadge"></span>
-      </button>
     </div>
   </nav>
 
@@ -256,7 +248,7 @@
     function init(){
       var client=ShopifyBuy.buildClient({domain:'s1j1y0-jj.myshopify.com',storefrontAccessToken:'5222d757653f774e0b82100dcf76ac93'});
       ShopifyBuy.UI.onReady(client).then(function(ui){
-        ui.createComponent('cart',{options:{"cart":{"styles":{"button":{"background-color":"#F472B6",":hover":{"background-color":"#e25da0"},":focus":{"background-color":"#e25da0"},"border-radius":"29px"}},"text":{"total":"Subtotal","button":"Pagar"}}}});if(window._sakaroCartReady)window._sakaroCartReady(ui);
+        ui.createComponent('cart',{options:{"cart":{"styles":{"button":{"background-color":"#F472B6",":hover":{"background-color":"#e25da0"},":focus":{"background-color":"#e25da0"},"border-radius":"29px"}},"text":{"total":"Subtotal","button":"Pagar"}},"toggle":{"styles":{"toggle":{"background-color":"#F472B6","width":"44px","height":"44px","padding":"10px","border-radius":"50%",":hover":{"background-color":"#e25da0"},":focus":{"background-color":"#e25da0"}},"count":{"font-size":"10px"}}}}});
       });
     }
     if(window.ShopifyBuy&&window.ShopifyBuy.UI){init();}
