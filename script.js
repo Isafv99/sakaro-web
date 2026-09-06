@@ -53,23 +53,3 @@ window._sakaroSetupCart = function(ui) {
   setInterval(updateBadge, 800);
 };
 
-(function() {
-  var cartLink = document.querySelector('.navbar__cart');
-  if (!cartLink) return;
-
-  cartLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    var attempts = 15;
-    function tryOpen() {
-      var cart = window._sakaroCart;
-      if (cart && typeof cart.toggleVisibility === 'function') {
-        cart.toggleVisibility();
-        return;
-      }
-      if (attempts-- > 0) {
-        setTimeout(tryOpen, 200);
-      }
-    }
-    tryOpen();
-  });
-})();
