@@ -34,6 +34,8 @@
 window._sakaroCart = null;
 
 function _sakaroStartBadge() {
+  if (window._sakaroBadgeRunning) return;
+  window._sakaroBadgeRunning = true;
   function updateBadge() {
     var cart = window._sakaroCart;
     if (!cart || !cart.model || !cart.model.lineItems) return;
@@ -46,36 +48,63 @@ function _sakaroStartBadge() {
   setInterval(updateBadge, 800);
 }
 
-window._sakaroSetupCart = function(ui, cartComponent) {
+function _sakaroFindCart(ui, productComponent) {
+  // Try explicit cart component passed from createComponent('cart')
+  if (ui.components && ui.components.cart && ui.components.cart[0]) {
+    return ui.components.cart[0];
+  }
+  // Try ui.cart (some SDK versions expose it here)
+  if (ui.cart) {
+    return ui.cart;
+  }
+  // Try the product component's cart reference
+  if (productComponent) {
+    if (productComponent.cart) return productComponent.cart;
+    if (productComponent.model && productComponent.model.cart) return productComponent.model.cart;
+  }
+  // Try product components' cart references
+  if (ui.components && ui.components.product) {
+    for (var i = 0; i < ui.components.product.length; i++) {
+      var p = ui.components.product[i];
+      if (p && p.cart) return p.cart;
+    }
+  }
+  return null;
+}
+
+window._sakaroSetupCart = function(ui, cartComponent, productComponent) {
   if (window._sakaroCart) return;
 
-  if (cartComponent) {
+  // Direct cart component (from createComponent('cart') on cart-only pages)
+  if (cartComponent && typeof cartComponent.toggleVisibility === 'function') {
     window._sakaroCart = cartComponent;
     _sakaroStartBadge();
     return;
   }
 
-  var carts = ui.components.cart;
-  if (carts && carts[0]) {
-    window._sakaroCart = carts[0];
+  // Search all known locations for the cart instance
+  var found = _sakaroFindCart(ui, productComponent);
+  if (found) {
+    window._sakaroCart = found;
     _sakaroStartBadge();
     return;
   }
 
-  var pollAttempts = 25;
+  // Poll — the SDK creates the cart asynchronously on product pages
+  var pollAttempts = 50;
   function poll() {
     if (window._sakaroCart) return;
-    var c = ui.components.cart;
-    if (c && c[0]) {
-      window._sakaroCart = c[0];
+    var c = _sakaroFindCart(ui, productComponent);
+    if (c) {
+      window._sakaroCart = c;
       _sakaroStartBadge();
       return;
     }
     if (pollAttempts-- > 0) {
-      setTimeout(poll, 300);
+      setTimeout(poll, 200);
     }
   }
-  setTimeout(poll, 300);
+  setTimeout(poll, 200);
 };
 
 (function() {
@@ -84,7 +113,7 @@ window._sakaroSetupCart = function(ui, cartComponent) {
 
   cartLink.addEventListener('click', function(e) {
     e.preventDefault();
-    var attempts = 15;
+    var attempts = 20;
     function tryOpen() {
       var cart = window._sakaroCart;
       if (cart && typeof cart.toggleVisibility === 'function') {
