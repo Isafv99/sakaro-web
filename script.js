@@ -31,11 +31,15 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
 
+// Shopify cart integration — outside IIFE so state is global
 window._sakaroCart = null;
 
-function _sakaroStartBadge() {
-  if (window._sakaroBadgeRunning) return;
-  window._sakaroBadgeRunning = true;
+window._sakaroSetupCart = function(ui) {
+  if (window._sakaroCart) return;
+  var carts = ui.components.cart;
+  if (!carts || !carts[0]) return;
+  window._sakaroCart = carts[0];
+
   function updateBadge() {
     var cart = window._sakaroCart;
     if (!cart || !cart.model || !cart.model.lineItems) return;
@@ -44,67 +48,9 @@ function _sakaroStartBadge() {
     var el = document.getElementById('cartCount');
     if (el) el.textContent = count;
   }
+
   updateBadge();
   setInterval(updateBadge, 800);
-}
-
-function _sakaroFindCart(ui, productComponent) {
-  // Try explicit cart component passed from createComponent('cart')
-  if (ui.components && ui.components.cart && ui.components.cart[0]) {
-    return ui.components.cart[0];
-  }
-  // Try ui.cart (some SDK versions expose it here)
-  if (ui.cart) {
-    return ui.cart;
-  }
-  // Try the product component's cart reference
-  if (productComponent) {
-    if (productComponent.cart) return productComponent.cart;
-    if (productComponent.model && productComponent.model.cart) return productComponent.model.cart;
-  }
-  // Try product components' cart references
-  if (ui.components && ui.components.product) {
-    for (var i = 0; i < ui.components.product.length; i++) {
-      var p = ui.components.product[i];
-      if (p && p.cart) return p.cart;
-    }
-  }
-  return null;
-}
-
-window._sakaroSetupCart = function(ui, cartComponent, productComponent) {
-  if (window._sakaroCart) return;
-
-  // Direct cart component (from createComponent('cart') on cart-only pages)
-  if (cartComponent && typeof cartComponent.toggleVisibility === 'function') {
-    window._sakaroCart = cartComponent;
-    _sakaroStartBadge();
-    return;
-  }
-
-  // Search all known locations for the cart instance
-  var found = _sakaroFindCart(ui, productComponent);
-  if (found) {
-    window._sakaroCart = found;
-    _sakaroStartBadge();
-    return;
-  }
-
-  // Poll — the SDK creates the cart asynchronously on product pages
-  var pollAttempts = 50;
-  function poll() {
-    if (window._sakaroCart) return;
-    var c = _sakaroFindCart(ui, productComponent);
-    if (c) {
-      window._sakaroCart = c;
-      _sakaroStartBadge();
-      return;
-    }
-    if (pollAttempts-- > 0) {
-      setTimeout(poll, 200);
-    }
-  }
-  setTimeout(poll, 200);
 };
 
 (function() {
@@ -113,7 +59,7 @@ window._sakaroSetupCart = function(ui, cartComponent, productComponent) {
 
   cartLink.addEventListener('click', function(e) {
     e.preventDefault();
-    var attempts = 20;
+    var attempts = 15;
     function tryOpen() {
       var cart = window._sakaroCart;
       if (cart && typeof cart.toggleVisibility === 'function') {

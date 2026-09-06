@@ -200,11 +200,6 @@ ul { list-style: none; }
 .navbar__hamburger.is-active span:nth-child(2) { opacity: 0; }
 .navbar__hamburger.is-active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
-/* Shopify cart toggle — hidden (using custom navbar icon instead) */
-.shopify-buy-frame--toggle {
-  display: none !important;
-}
-
 /* ═══════════════════════════════════════
    HERO — SPLIT LAYOUT
    ═══════════════════════════════════════ */
