@@ -123,9 +123,8 @@ ul { list-style: none; }
 .navbar__links {
   display: flex;
   gap: 32px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1;
+  justify-content: center;
 }
 .navbar__links a {
   font-size: 14px;
@@ -152,7 +151,7 @@ ul { list-style: none; }
   font-size: 14px;
   font-weight: 600;
   transition: all 0.3s;
-  margin-left: auto;
+  white-space: nowrap;
 }
 .navbar__cta:hover { background: #e25da0; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(244,114,182,0.3); }
 .navbar__hamburger {
@@ -1089,9 +1088,9 @@ ul { list-style: none; }
   .navbar__links.is-open {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     position: absolute;
     top: 72px; left: 0; right: 0;
-    transform: none;
     background: var(--color-bg);
     padding: 24px;
     gap: 20px;
