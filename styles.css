@@ -1609,6 +1609,7 @@ a.product-card__bubble { color: #fff; text-decoration: none; }
   margin-bottom: 32px;
 }
 .newsletter__form {
+  position: relative;
   display: flex;
   gap: 12px;
   max-width: 460px;
