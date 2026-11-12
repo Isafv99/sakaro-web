@@ -53,3 +53,34 @@ window._sakaroSetupCart = function(ui) {
   setInterval(updateBadge, 800);
 };
 
+// Buen Fin auto show/hide by date (America/Mexico_City)
+(function() {
+  var START = new Date('2026-11-13T00:00:00-06:00');
+  var END   = new Date('2026-11-17T00:00:00-06:00');
+
+  function isBuenFin() {
+    var now = new Date();
+    return now >= START && now < END;
+  }
+
+  function toggle() {
+    var active = isBuenFin();
+    document.body.classList.toggle('bf-active', active);
+    var els = document.querySelectorAll('.bf-promo');
+    for (var i = 0; i < els.length; i++) {
+      els[i].classList.toggle('bf-hidden', !active);
+    }
+    var regs = document.querySelectorAll('.bf-regular');
+    for (var j = 0; j < regs.length; j++) {
+      regs[j].classList.toggle('bf-hidden', active);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', toggle);
+  } else {
+    toggle();
+  }
+  setInterval(toggle, 60000);
+})();
+
